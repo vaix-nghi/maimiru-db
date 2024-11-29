@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th></th>
-			<td>maimiru . order_for_calendars</td>
+			<th>祝日情報/Ngày nghỉ riêng của trường học/doanh nghiệp</th>
+			<td>holidays</td>
 			</tr>
 		</table>
 	</div>
@@ -31,13 +31,13 @@
 			<th>システム名</th>
 			<td>マイみーる　食数管理システム</td>
 			<th>作成者</th>
-			<td>レ　タン　ニー</td>
+			<td>Le&#32;Thanh&#32;Nghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/11/26</td>
+			<td>2024/11/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -71,7 +71,7 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td></td>
+			<td>ID&#32;ngày&#32;nghỉ</td>
 			<td>id</td>
 			<td>bigint&#32;unsigned&#32;auto_increment</td>
 			<td>Yes (PK)</td>
@@ -89,8 +89,8 @@
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td>喫食日/Ngày&#32;ăn</td>
-			<td>eat_date</td>
+			<td>Ngày&#32;nghỉ</td>
+			<td>day</td>
 			<td>date</td>
 			<td>Yes</td>
 			<td></td>
@@ -98,42 +98,15 @@
 		</tr>
 		<tr>
 			<td class="number-format">4</td>
-			<td>メニューID/ID&#32;Menu</td>
-			<td>menu_id</td>
-			<td>bigint&#32;unsigned</td>
-			<td>Yes</td>
+			<td>Ghi&#32;chú</td>
+			<td>note</td>
+			<td>varchar(255)</td>
+			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">5</td>
-			<td>略称/Tên&#32;menu&#32;vắn&#32;tắt</td>
-			<td>menu_short_name</td>
-			<td>varchar(255)</td>
-			<td>Yes</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">6</td>
-			<td>単価/Giá&#32;của&#32;menu</td>
-			<td>menu_price</td>
-			<td>decimal(10,2)</td>
-			<td>Yes</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">7</td>
-			<td>詳細データ/Dữ&#32;liệu&#32;chi&#32;tiết</td>
-			<td>detail</td>
-			<td>json</td>
-			<td>Yes</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">8</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -142,12 +115,30 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">9</td>
+			<td class="number-format">6</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
 			<td></td>
 			<td>null</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">7</td>
+			<td>Người&#32;tạo</td>
+			<td>created_by</td>
+			<td>bigint</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">8</td>
+			<td>Người&#32;cập&#32;nhật</td>
+			<td>updated_by</td>
+			<td>bigint</td>
+			<td></td>
+			<td></td>
 			<td></td>
 		</tr>
 	</table>

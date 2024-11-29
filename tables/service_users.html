@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th></th>
-			<td>maimiru . clients</td>
+			<th>利用者情報/User sử dụng service</th>
+			<td>service_users</td>
 			</tr>
 		</table>
 	</div>
@@ -31,13 +31,13 @@
 			<th>システム名</th>
 			<td>マイみーる　食数管理システム</td>
 			<th>作成者</th>
-			<td>レ　タン　ニー</td>
+			<td>Le&#32;Thanh&#32;Nghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/11/26</td>
+			<td>2024/11/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -81,7 +81,7 @@
 		<tr>
 			<td class="number-format">2</td>
 			<td></td>
-			<td>service_provider_id</td>
+			<td>client_id</td>
 			<td>bigint&#32;unsigned</td>
 			<td>Yes</td>
 			<td></td>
@@ -89,116 +89,116 @@
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td>事業所コード/Code</td>
-			<td>code</td>
-			<td>varchar(12)</td>
+			<td>ユーザーID/User&#32;ID</td>
+			<td>user_id</td>
+			<td>bigint</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">4</td>
-			<td>事業所名/Tên&#32;công&#32;ty&#32;thực&#32;phẩm</td>
-			<td>name</td>
-			<td>varchar(128)</td>
+			<td>利用者CD/Code&#32;người&#32;dùng</td>
+			<td>code</td>
+			<td>varchar(50)</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">5</td>
-			<td>事業所名（略称）/Tên&#32;viết&#32;tắt</td>
-			<td>short_name</td>
-			<td>varchar(30)</td>
-			<td></td>
+			<td>利用者名/Tên&#32;người&#32;dùng</td>
+			<td>name</td>
+			<td>varchar(255)</td>
+			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">6</td>
-			<td>郵便番号/Mã&#32;bưu&#32;điện</td>
-			<td>postcode</td>
-			<td>varchar(8)</td>
+			<td>利用者名カナ/Tên&#32;Kana</td>
+			<td>name_kana</td>
+			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">7</td>
-			<td>都道府県/Tỉnh</td>
-			<td>prefecture</td>
-			<td>varchar(7)</td>
+			<td>性別/Giới&#32;tính</td>
+			<td>sex</td>
+			<td>tinyint</td>
+			<td>Yes</td>
 			<td></td>
-			<td></td>
-			<td></td>
+			<td>1.Nam,&#32;2.Nữ</td>
 		</tr>
 		<tr>
 			<td class="number-format">8</td>
-			<td>住所1/Địa&#32;chỉ&#32;1</td>
-			<td>address1</td>
-			<td>varchar(155)</td>
+			<td>生年月日/Ngày&#32;tháng&#32;năm&#32;sinh</td>
+			<td>birthday</td>
+			<td>date</td>
 			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">9</td>
-			<td>住所2/Địa&#32;chỉ&#32;2</td>
-			<td>address2</td>
-			<td>varchar(155)</td>
+			<td></td>
+			<td>department_id</td>
+			<td>bigint&#32;unsigned</td>
 			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">10</td>
-			<td>住所3/Địa&#32;chỉ&#32;3</td>
-			<td>address3</td>
-			<td>varchar(155)</td>
+			<td>ICｶｰﾄﾞA&#32;/ID&#32;của&#32;IC&#32;card</td>
+			<td>ic_card_id</td>
+			<td>varchar(50)</td>
 			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">11</td>
-			<td>電話番号/Điện&#32;thoại</td>
-			<td>tel</td>
-			<td>varchar(15)</td>
+			<td>ICｶｰﾄﾞ情報/Thông&#32;tin&#32;của&#32;IC&#32;card</td>
+			<td>ic_card_info</td>
+			<td>text</td>
 			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">12</td>
-			<td>FAX/fax</td>
-			<td>fax</td>
-			<td>varchar(15)</td>
+			<td>備考/Ghi&#32;chú</td>
+			<td>notes</td>
+			<td>text</td>
 			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">13</td>
-			<td>利用者決済方法/Cách&#32;quyết&#32;toán&#32;đối&#32;với&#32;user</td>
-			<td>user_pay_type</td>
-			<td>tinyint&#32;unsigned</td>
+			<td>システム利用料/Phí&#32;sử&#32;dụng&#32;hệ&#32;thống</td>
+			<td>system_use_fee</td>
+			<td>decimal(10,2)</td>
 			<td>Yes</td>
+			<td>'0.00'</td>
 			<td></td>
-			<td>1.売掛</td>
 		</tr>
 		<tr>
 			<td class="number-format">14</td>
-			<td>集金方法/Phương&#32;thức&#32;thu&#32;tiền</td>
-			<td>money_collection_method</td>
-			<td>tinyint&#32;unsigned</td>
+			<td>受注状態/Trạng&#32;thái&#32;được&#32;phép&#32;order</td>
+			<td>order_enabled_status</td>
+			<td>tinyint</td>
 			<td>Yes</td>
+			<td>1</td>
 			<td></td>
-			<td>1.&#32;振替,2.&#32;振込</td>
 		</tr>
 		<tr>
 			<td class="number-format">15</td>
-			<td>契約開始日/Ngày&#32;ký&#32;hợp&#32;đồng</td>
-			<td>contract_start_date</td>
+			<td>受注終了日/Ngày&#32;kết&#32;thúc&#32;order</td>
+			<td>order_finish_date</td>
 			<td>date</td>
 			<td></td>
 			<td></td>
@@ -206,35 +206,35 @@
 		</tr>
 		<tr>
 			<td class="number-format">16</td>
-			<td>契約終了日/Ngày&#32;kết&#32;thúc&#32;hợp&#32;đồng</td>
-			<td>contract_end_date</td>
+			<td>利用状態/Trạng&#32;thái&#32;được&#32;phép&#32;sử&#32;dụng&#32;hệ&#32;thống</td>
+			<td>usable_status</td>
+			<td>tinyint</td>
+			<td>Yes</td>
+			<td>1</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">17</td>
+			<td>利用終了日/Ngày&#32;kết&#32;thúc&#32;sử&#32;dụng</td>
+			<td>usable_finish_date</td>
 			<td>date</td>
 			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">17</td>
-			<td>システム利用料/Phí&#32;sử&#32;dụng&#32;hệ&#32;thống</td>
-			<td>system_use_fee</td>
-			<td>decimal(10,2)</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
 			<td class="number-format">18</td>
-			<td>登録番号（インボイス）/Số&#32;đăng&#32;ký&#32;invoice</td>
-			<td>invoice_number</td>
-			<td>varchar(15)</td>
+			<td>利用終了理由/Lý&#32;do&#32;kết&#32;thúc&#32;sử&#32;dụng</td>
+			<td>usable_finish_reason</td>
+			<td>text</td>
 			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">19</td>
-			<td>請求先住所/Địa&#32;chỉ&#32;yêu&#32;cầu&#32;thanh&#32;toán</td>
-			<td>billing_address</td>
+			<td>アレルギー素材　複数可能　カンマ区切り/Các&#32;mục&#32;dị&#32;ứng,&#32;phân&#32;cách&#32;bởi&#32;dấu&#32;phẩy</td>
+			<td>allergy_items</td>
 			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
@@ -242,60 +242,6 @@
 		</tr>
 		<tr>
 			<td class="number-format">20</td>
-			<td>銀行名/Tên&#32;ngân&#32;hàng</td>
-			<td>billing_bank_account</td>
-			<td>varchar(50)</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">21</td>
-			<td>支店名/Chi&#32;nhánh</td>
-			<td>billing_bank_branch</td>
-			<td>varchar(50)</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">22</td>
-			<td>口座種別/Loại&#32;tài&#32;khoản</td>
-			<td>billing_bank_type</td>
-			<td>tinyint&#32;unsigned</td>
-			<td></td>
-			<td></td>
-			<td>1.普通,&#32;2.当座</td>
-		</tr>
-		<tr>
-			<td class="number-format">23</td>
-			<td>口座番号/Số&#32;toàn&#32;khoản</td>
-			<td>billing_bank_number</td>
-			<td>varchar(20)</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">24</td>
-			<td>口座名義/Tên&#32;tài&#32;khoản</td>
-			<td>billing_bank_name</td>
-			<td>varchar(50)</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">25</td>
-			<td>請求書備考/Ghi&#32;chú&#32;cho&#32;yêu&#32;cầu&#32;thanh&#32;toán</td>
-			<td>billing_note</td>
-			<td>text</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">26</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -304,7 +250,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">27</td>
+			<td class="number-format">21</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
@@ -340,15 +286,15 @@
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td>clients_code_unique</td>
-			<td>code</td>
-			<td>制約</td>
+			<td>service_users_client_id_foreign</td>
+			<td>client_id</td>
+			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td>clients_service_provider_id_foreign</td>
-			<td>service_provider_id</td>
+			<td>service_users_department_id_foreign</td>
+			<td>department_id</td>
 			<td></td>
 			<td></td>
 		</tr>
@@ -375,12 +321,6 @@
 			<td>PRIMARY&#32;KEY</td>
 			<td>id</td>
 		</tr>
-		<tr>
-			<td class="number-format">2</td>
-			<td>clients_code_unique</td>
-			<td>UNIQUE</td>
-			<td>code</td>
-		</tr>
 	</table>
 
 <br>
@@ -405,11 +345,20 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td>maimiru.clients_service_provider_id_foreign</td>
-			<td>service_provider_id</td>
-			<td><a href="maimiru.service_providers.html">maimiru.service_providers</td>
+			<td>service_users_client_id_foreign</td>
+			<td>client_id</td>
+			<td><a href="clients.html">clients</td>
 			<td>id</td>
 			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>service_users_department_id_foreign</td>
+			<td>department_id</td>
+			<td><a href="departments.html">departments</td>
+			<td>id</td>
+			<td>SET&#32;NULL</td>
 			<td>NO&#32;ACTION</td>
 		</tr>
 	</table>
@@ -437,64 +386,10 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td>maimiru.client_admins_client_id_foreign</td>
+			<td>deptors_service_user_id_foreign</td>
 			<td>id</td>
-			<td><a href="maimiru.client_admins.html">maimiru.client_admins</td>
-			<td>client_id</td>
-			<td>CASCADE</td>
-			<td>NO&#32;ACTION</td>
-		</tr>
-		<tr>
-			<td class="number-format">2</td>
-			<td>maimiru.client_settings_client_id_foreign</td>
-			<td>id</td>
-			<td><a href="maimiru.client_settings.html">maimiru.client_settings</td>
-			<td>client_id</td>
-			<td>CASCADE</td>
-			<td>NO&#32;ACTION</td>
-		</tr>
-		<tr>
-			<td class="number-format">3</td>
-			<td>maimiru.departments_client_id_foreign</td>
-			<td>id</td>
-			<td><a href="maimiru.departments.html">maimiru.departments</td>
-			<td>client_id</td>
-			<td>CASCADE</td>
-			<td>NO&#32;ACTION</td>
-		</tr>
-		<tr>
-			<td class="number-format">4</td>
-			<td>maimiru.menu_price_categories_client_id_foreign</td>
-			<td>id</td>
-			<td><a href="maimiru.menu_price_categories.html">maimiru.menu_price_categories</td>
-			<td>client_id</td>
-			<td>CASCADE</td>
-			<td>NO&#32;ACTION</td>
-		</tr>
-		<tr>
-			<td class="number-format">5</td>
-			<td>maimiru.menus_client_id_foreign</td>
-			<td>id</td>
-			<td><a href="maimiru.menus.html">maimiru.menus</td>
-			<td>client_id</td>
-			<td>CASCADE</td>
-			<td>NO&#32;ACTION</td>
-		</tr>
-		<tr>
-			<td class="number-format">6</td>
-			<td>maimiru.service_users_client_id_foreign</td>
-			<td>id</td>
-			<td><a href="maimiru.service_users.html">maimiru.service_users</td>
-			<td>client_id</td>
-			<td>CASCADE</td>
-			<td>NO&#32;ACTION</td>
-		</tr>
-		<tr>
-			<td class="number-format">7</td>
-			<td>maimiru.tmp_orders_client_id_foreign</td>
-			<td>id</td>
-			<td><a href="maimiru.tmp_orders.html">maimiru.tmp_orders</td>
-			<td>client_id</td>
+			<td><a href="deptors.html">deptors</td>
+			<td>service_user_id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>

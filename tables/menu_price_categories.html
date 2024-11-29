@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th>Đối tượng nhận thông báo</th>
-			<td>maimiru . user_notification</td>
+			<th>価格内訳マスタ/Category về đơn giá trong thực đơn</th>
+			<td>menu_price_categories</td>
 			</tr>
 		</table>
 	</div>
@@ -31,13 +31,13 @@
 			<th>システム名</th>
 			<td>マイみーる　食数管理システム</td>
 			<th>作成者</th>
-			<td>レ　タン　ニー</td>
+			<td>Le&#32;Thanh&#32;Nghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/11/26</td>
+			<td>2024/11/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -71,7 +71,7 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td>ID&#32;thông&#32;báo&#32;người&#32;dùng</td>
+			<td></td>
 			<td>id</td>
 			<td>bigint&#32;unsigned&#32;auto_increment</td>
 			<td>Yes (PK)</td>
@@ -80,25 +80,43 @@
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td>ID&#32;người&#32;dùng</td>
-			<td>user_id</td>
-			<td>int</td>
+			<td></td>
+			<td>client_id</td>
+			<td>bigint&#32;unsigned</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td>ID&#32;thông&#32;báo</td>
-			<td>notification_id</td>
-			<td>int</td>
+			<td>項目名/Tên&#32;mục</td>
+			<td>item_name</td>
+			<td>varchar(255)</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">4</td>
-			<td>created_at</td>
+			<td>デフォルト単価/Giá&#32;mặc&#32;định</td>
+			<td>default_price</td>
+			<td>int&#32;unsigned</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">5</td>
+			<td>表示順/Thứ&#32;tự&#32;hiển&#32;thị</td>
+			<td>idx</td>
+			<td>int&#32;unsigned</td>
+			<td></td>
+			<td>0</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">6</td>
+			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
 			<td></td>
@@ -106,8 +124,8 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">5</td>
-			<td>updated_at</td>
+			<td class="number-format">7</td>
+			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
 			<td></td>
@@ -138,6 +156,13 @@
 			<td>PRIMARY</td>
 			<td>id</td>
 			<td>Yes</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>menu_price_categories_client_id_foreign</td>
+			<td>client_id</td>
+			<td></td>
 			<td></td>
 		</tr>
 	</table>
@@ -184,6 +209,15 @@
 			<th>参照先カラムリスト</th>
 			<th>ON DELETE</th>
 			<th>ON UPDATE</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>menu_price_categories_client_id_foreign</td>
+			<td>client_id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
 		</tr>
 	</table>
 

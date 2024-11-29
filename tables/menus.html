@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th></th>
-			<td>maimiru . departments</td>
+			<th>メニュー（給食区分）/Suất ăn</th>
+			<td>menus</td>
 			</tr>
 		</table>
 	</div>
@@ -31,13 +31,13 @@
 			<th>システム名</th>
 			<td>マイみーる　食数管理システム</td>
 			<th>作成者</th>
-			<td>レ　タン　ニー</td>
+			<td>Le&#32;Thanh&#32;Nghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/11/26</td>
+			<td>2024/11/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -89,17 +89,17 @@
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td></td>
-			<td>parent_department_id</td>
-			<td>bigint&#32;unsigned</td>
-			<td></td>
+			<td>給食メニュー名&#32;/Tên&#32;menu</td>
+			<td>menu_name</td>
+			<td>varchar(255)</td>
+			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">4</td>
-			<td>部門名/Tên&#32;bộ&#32;phận</td>
-			<td>department_name</td>
+			<td>表示用メニュー名&#32;/Tên&#32;menu&#32;để&#32;hiển&#32;thị</td>
+			<td>menu_name_for_display</td>
 			<td>varchar(255)</td>
 			<td>Yes</td>
 			<td></td>
@@ -107,15 +107,78 @@
 		</tr>
 		<tr>
 			<td class="number-format">5</td>
-			<td>注文方式/Phương&#32;thức&#32;order</td>
-			<td>order_method</td>
-			<td>enum('a','b','c')</td>
+			<td>略称/Tên&#32;vắn&#32;tắt</td>
+			<td>short_menu_name</td>
+			<td>varchar(10)</td>
+			<td>Yes</td>
 			<td></td>
 			<td></td>
-			<td>&#32;a.Default&#32;ăn,&#32;b.Người&#32;dùng&#32;tự&#32;đặt,&#32;c.Admin&#32;đặt&#32;hộ</td>
 		</tr>
 		<tr>
 			<td class="number-format">6</td>
+			<td>カレンダーの色/Màu&#32;sắc</td>
+			<td>calendar_color</td>
+			<td>varchar(7)</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">7</td>
+			<td>表示順&#32;/Thứ&#32;tự&#32;hiển&#32;thị</td>
+			<td>idx</td>
+			<td>int&#32;unsigned</td>
+			<td>Yes</td>
+			<td>0</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">8</td>
+			<td>価格表示&#32;/Có&#32;hiển&#32;thị&#32;giá&#32;hay&#32;không</td>
+			<td>display_price</td>
+			<td>tinyint(1)</td>
+			<td>Yes</td>
+			<td>1</td>
+			<td>0.Không,&#32;1.Có</td>
+		</tr>
+		<tr>
+			<td class="number-format">9</td>
+			<td>食事提供曜日/Các&#32;thứ&#32;ngày&#32;cung&#32;cấp&#32;bữa&#32;ăn&#32;trong&#32;tuần</td>
+			<td>meal_service_days</td>
+			<td>json</td>
+			<td>Yes</td>
+			<td></td>
+			<td>0-6=CN～T7,&#32;7=Ngày&#32;lễ</td>
+		</tr>
+		<tr>
+			<td class="number-format">10</td>
+			<td>欠食可能曜日/Các&#32;thứ&#32;ngày&#32;cho&#32;phép&#32;hủy&#32;bữa&#32;ăn&#32;trong&#32;tuần</td>
+			<td>meal_can_be_skip_days</td>
+			<td>json</td>
+			<td></td>
+			<td></td>
+			<td>0-6=CN～T7,&#32;7=Ngày&#32;lễ</td>
+		</tr>
+		<tr>
+			<td class="number-format">11</td>
+			<td>注文締切前日数/Số&#32;ngày&#32;cho&#32;phép&#32;hủy&#32;trước&#32;ngày&#32;ăn</td>
+			<td>days_before_order_deadline</td>
+			<td>int&#32;unsigned</td>
+			<td>Yes</td>
+			<td>0</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">12</td>
+			<td>注文締切時間/Giờ&#32;cho&#32;phép&#32;hủy</td>
+			<td>order_cutoff_time</td>
+			<td>time</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">13</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -124,7 +187,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">7</td>
+			<td class="number-format">14</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
@@ -160,15 +223,8 @@
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td>departments_client_id_foreign</td>
+			<td>menus_client_id_foreign</td>
 			<td>client_id</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">3</td>
-			<td>departments_parent_department_id_foreign</td>
-			<td>parent_department_id</td>
 			<td></td>
 			<td></td>
 		</tr>
@@ -219,18 +275,9 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td>maimiru.departments_client_id_foreign</td>
+			<td>menus_client_id_foreign</td>
 			<td>client_id</td>
-			<td><a href="maimiru.clients.html">maimiru.clients</td>
-			<td>id</td>
-			<td>CASCADE</td>
-			<td>NO&#32;ACTION</td>
-		</tr>
-		<tr>
-			<td class="number-format">2</td>
-			<td>maimiru.departments_parent_department_id_foreign</td>
-			<td>parent_department_id</td>
-			<td><a href="maimiru.departments.html">maimiru.departments</td>
+			<td><a href="clients.html">clients</td>
 			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
@@ -260,29 +307,20 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td>maimiru.department_menus_department_id_foreign</td>
+			<td>department_menus_menu_id_foreign</td>
 			<td>id</td>
-			<td><a href="maimiru.department_menus.html">maimiru.department_menus</td>
-			<td>department_id</td>
+			<td><a href="department_menus.html">department_menus</td>
+			<td>menu_id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td>maimiru.departments_parent_department_id_foreign</td>
+			<td>menu_changed_histories_menu_id_foreign</td>
 			<td>id</td>
-			<td><a href="maimiru.departments.html">maimiru.departments</td>
-			<td>parent_department_id</td>
+			<td><a href="menu_changed_histories.html">menu_changed_histories</td>
+			<td>menu_id</td>
 			<td>CASCADE</td>
-			<td>NO&#32;ACTION</td>
-		</tr>
-		<tr>
-			<td class="number-format">3</td>
-			<td>maimiru.service_users_department_id_foreign</td>
-			<td>id</td>
-			<td><a href="maimiru.service_users.html">maimiru.service_users</td>
-			<td>department_id</td>
-			<td>SET&#32;NULL</td>
 			<td>NO&#32;ACTION</td>
 		</tr>
 	</table>

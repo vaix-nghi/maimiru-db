@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th>Thông báo của hệ thống</th>
-			<td>maimiru . notifications</td>
+			<th>部門のメニュー/Menu của bộ phận</th>
+			<td>department_menus</td>
 			</tr>
 		</table>
 	</div>
@@ -31,13 +31,13 @@
 			<th>システム名</th>
 			<td>マイみーる　食数管理システム</td>
 			<th>作成者</th>
-			<td>レ　タン　ニー</td>
+			<td>Le&#32;Thanh&#32;Nghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/11/26</td>
+			<td>2024/11/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -71,7 +71,7 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td>ID&#32;thông&#32;báo</td>
+			<td></td>
 			<td>id</td>
 			<td>bigint&#32;unsigned&#32;auto_increment</td>
 			<td>Yes (PK)</td>
@@ -80,83 +80,38 @@
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td>Ngày&#32;bắt&#32;đầu</td>
-			<td>day_start</td>
-			<td>date</td>
+			<td></td>
+			<td>department_id</td>
+			<td>bigint&#32;unsigned</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td>Ngày&#32;kết&#32;thúc</td>
-			<td>day_end</td>
-			<td>date</td>
+			<td></td>
+			<td>menu_id</td>
+			<td>bigint&#32;unsigned</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">4</td>
-			<td>Tiêu&#32;đề</td>
-			<td>title</td>
-			<td>varchar(255)</td>
-			<td>Yes</td>
 			<td></td>
+			<td>created_at</td>
+			<td>timestamp</td>
+			<td></td>
+			<td>null</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">5</td>
-			<td>Nội&#32;dung</td>
-			<td>content</td>
-			<td>text</td>
-			<td>Yes</td>
 			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">6</td>
-			<td>Phạm&#32;vi&#32;gửi&#32;thông&#32;báo</td>
-			<td>scope</td>
-			<td>enum('all','selected_recipients')</td>
-			<td>Yes</td>
-			<td>'all'</td>
-			<td>all:&#32;toàn&#32;bộ,&#32;selected_recipients:&#32;người&#32;nhận&#32;được&#32;chọn</td>
-		</tr>
-		<tr>
-			<td class="number-format">7</td>
-			<td>created_at</td>
-			<td>created_at</td>
-			<td>timestamp</td>
-			<td></td>
-			<td>null</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">8</td>
-			<td>updated_at</td>
 			<td>updated_at</td>
 			<td>timestamp</td>
 			<td></td>
 			<td>null</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">9</td>
-			<td>Người&#32;tạo</td>
-			<td>created_by</td>
-			<td>bigint</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">10</td>
-			<td>Người&#32;cập&#32;nhật</td>
-			<td>updated_by</td>
-			<td>bigint</td>
-			<td></td>
-			<td></td>
 			<td></td>
 		</tr>
 	</table>
@@ -183,6 +138,20 @@
 			<td>PRIMARY</td>
 			<td>id</td>
 			<td>Yes</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>department_menus_department_id_foreign</td>
+			<td>department_id</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">3</td>
+			<td>department_menus_menu_id_foreign</td>
+			<td>menu_id</td>
+			<td></td>
 			<td></td>
 		</tr>
 	</table>
@@ -229,6 +198,24 @@
 			<th>参照先カラムリスト</th>
 			<th>ON DELETE</th>
 			<th>ON UPDATE</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>department_menus_department_id_foreign</td>
+			<td>department_id</td>
+			<td><a href="departments.html">departments</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>department_menus_menu_id_foreign</td>
+			<td>menu_id</td>
+			<td><a href="menus.html">menus</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
 		</tr>
 	</table>
 

@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th></th>
-			<td>maimiru . deptors</td>
+			<th>喫食カレンダーデータ/Dữ liệu đặt lịch suất ăn</th>
+			<td>tmp_orders</td>
 			</tr>
 		</table>
 	</div>
@@ -31,13 +31,13 @@
 			<th>システム名</th>
 			<td>マイみーる　食数管理システム</td>
 			<th>作成者</th>
-			<td>レ　タン　ニー</td>
+			<td>Le&#32;Thanh&#32;Nghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/11/26</td>
+			<td>2024/11/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -81,7 +81,7 @@
 		<tr>
 			<td class="number-format">2</td>
 			<td></td>
-			<td>service_user_id</td>
+			<td>client_id</td>
 			<td>bigint&#32;unsigned</td>
 			<td>Yes</td>
 			<td></td>
@@ -89,51 +89,24 @@
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td>債務者名/Tên&#32;phụ&#32;huynh</td>
-			<td>name</td>
-			<td>varchar(255)</td>
+			<td>発生月/Tháng&#32;(YYYY-MM-01)</td>
+			<td>month</td>
+			<td>date</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">4</td>
-			<td>債務者名カナ/Tên&#32;kana</td>
-			<td>name_kana</td>
-			<td>varchar(255)</td>
-			<td></td>
-			<td></td>
+			<td>確定状態/Trạng&#32;thái</td>
+			<td>status</td>
+			<td>enum('draft','doing','finished')</td>
+			<td>Yes</td>
+			<td>'draft'</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">5</td>
-			<td>住所/Địa&#32;chỉ</td>
-			<td>address</td>
-			<td>text</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">6</td>
-			<td>電話番号/Điện&#32;thoại</td>
-			<td>tel</td>
-			<td>varchar(15)</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">7</td>
-			<td>同意チェック日時/Ngày&#32;check&#32;vào&#32;đồng&#32;ý</td>
-			<td>agreement_checked_date</td>
-			<td>timestamp</td>
-			<td></td>
-			<td>null</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">8</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -142,7 +115,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">9</td>
+			<td class="number-format">6</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
@@ -178,8 +151,8 @@
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td>deptors_service_user_id_foreign</td>
-			<td>service_user_id</td>
+			<td>tmp_orders_client_id_foreign</td>
+			<td>client_id</td>
 			<td></td>
 			<td></td>
 		</tr>
@@ -230,9 +203,9 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td>maimiru.deptors_service_user_id_foreign</td>
-			<td>service_user_id</td>
-			<td><a href="maimiru.service_users.html">maimiru.service_users</td>
+			<td>tmp_orders_client_id_foreign</td>
+			<td>client_id</td>
+			<td><a href="clients.html">clients</td>
 			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
@@ -259,6 +232,15 @@
 			<th>参照元カラムリスト</th>
 			<th>ON DELETE</th>
 			<th>ON UPDATE</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>tmp_order_details_tmp_order_id_foreign</td>
+			<td>id</td>
+			<td><a href="tmp_order_details.html">tmp_order_details</td>
+			<td>tmp_order_id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
 		</tr>
 	</table>
 

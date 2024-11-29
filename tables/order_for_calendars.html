@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th></th>
-			<td>maimiru . client_settings</td>
+			<th>受注情報（カレンダー表示用）/Dữ liệu đặt suất ăn(Cho Calendar)</th>
+			<td>order_for_calendars</td>
 			</tr>
 		</table>
 	</div>
@@ -31,13 +31,13 @@
 			<th>システム名</th>
 			<td>マイみーる　食数管理システム</td>
 			<th>作成者</th>
-			<td>レ　タン　ニー</td>
+			<td>Le&#32;Thanh&#32;Nghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/11/26</td>
+			<td>2024/11/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -80,7 +80,7 @@
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td></td>
+			<td>事業所ID/ID&#32;trường&#32;học/doanh&#32;nghiệp</td>
 			<td>client_id</td>
 			<td>bigint&#32;unsigned</td>
 			<td>Yes</td>
@@ -89,42 +89,51 @@
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td>保護者同意要否&#32;/Cần&#32;sự&#32;đồng&#32;ý&#32;của&#32;phụ&#32;huynh</td>
-			<td>need_agreement_of_deptor</td>
-			<td>tinyint(1)</td>
+			<td>喫食日/Ngày&#32;ăn</td>
+			<td>eat_date</td>
+			<td>date</td>
 			<td>Yes</td>
-			<td>0</td>
-			<td>0.Không&#32;cần,&#32;1.Cần</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">4</td>
-			<td>アレルゲン管理&#32;/Cần&#32;quản&#32;lý&#32;dị&#32;ứng</td>
-			<td>need_manage_allergy</td>
-			<td>tinyint(1)</td>
+			<td>メニューID/ID&#32;Menu</td>
+			<td>menu_id</td>
+			<td>bigint&#32;unsigned</td>
 			<td>Yes</td>
-			<td>0</td>
-			<td>0.Không&#32;cần,&#32;1.Cần</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">5</td>
-			<td>選択食&#32;/Cho&#32;phép&#32;chọn&#32;bữa&#32;ăn</td>
-			<td>enable_select_meal</td>
-			<td>tinyint(1)</td>
+			<td>略称/Tên&#32;menu&#32;vắn&#32;tắt</td>
+			<td>menu_short_name</td>
+			<td>varchar(255)</td>
 			<td>Yes</td>
-			<td>0</td>
-			<td>0.Không,&#32;1.Có</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">6</td>
-			<td>支払方法&#32;&#32;/Phương&#32;thức&#32;thanh&#32;toán</td>
-			<td>payment_method</td>
-			<td>int&#32;unsigned</td>
+			<td>単価/Giá&#32;của&#32;menu</td>
+			<td>menu_price</td>
+			<td>decimal(10,2)</td>
 			<td>Yes</td>
-			<td>1</td>
-			<td>1.afterpaid,&#32;2.prepaid,&#32;3.credit</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">7</td>
+			<td>詳細データ/Dữ&#32;liệu&#32;chi&#32;tiết</td>
+			<td>detail</td>
+			<td>json</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">8</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -133,7 +142,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">8</td>
+			<td class="number-format">9</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
@@ -165,13 +174,6 @@
 			<td>PRIMARY</td>
 			<td>id</td>
 			<td>Yes</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">2</td>
-			<td>client_settings_client_id_foreign</td>
-			<td>client_id</td>
-			<td></td>
 			<td></td>
 		</tr>
 	</table>
@@ -218,15 +220,6 @@
 			<th>参照先カラムリスト</th>
 			<th>ON DELETE</th>
 			<th>ON UPDATE</th>
-		</tr>
-		<tr>
-			<td class="number-format">1</td>
-			<td>maimiru.client_settings_client_id_foreign</td>
-			<td>client_id</td>
-			<td><a href="maimiru.clients.html">maimiru.clients</td>
-			<td>id</td>
-			<td>CASCADE</td>
-			<td>NO&#32;ACTION</td>
 		</tr>
 	</table>
 

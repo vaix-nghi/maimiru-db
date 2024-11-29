@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th></th>
-			<td>maimiru . service_provider_bank_accounts</td>
+			<th>お知らせ/Thông báo của hệ thống</th>
+			<td>notifications</td>
 			</tr>
 		</table>
 	</div>
@@ -31,13 +31,13 @@
 			<th>システム名</th>
 			<td>マイみーる　食数管理システム</td>
 			<th>作成者</th>
-			<td>レ　タン　ニー</td>
+			<td>Le&#32;Thanh&#32;Nghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/11/26</td>
+			<td>2024/11/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -71,7 +71,7 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td></td>
+			<td>ID&#32;thông&#32;báo</td>
 			<td>id</td>
 			<td>bigint&#32;unsigned&#32;auto_increment</td>
 			<td>Yes (PK)</td>
@@ -80,69 +80,51 @@
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td></td>
-			<td>service_provider_id</td>
-			<td>bigint&#32;unsigned</td>
+			<td>Ngày&#32;bắt&#32;đầu</td>
+			<td>day_start</td>
+			<td>date</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td>請求先住所/Địa&#32;chỉ&#32;yêu&#32;cầu&#32;thanh&#32;toán</td>
-			<td>billing_address</td>
-			<td>varchar(255)</td>
-			<td></td>
+			<td>Ngày&#32;kết&#32;thúc</td>
+			<td>day_end</td>
+			<td>date</td>
+			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">4</td>
-			<td>銀行名/Tên&#32;ngân&#32;hàng</td>
-			<td>billing_bank_account</td>
-			<td>varchar(50)</td>
+			<td>Tiêu&#32;đề</td>
+			<td>title</td>
+			<td>varchar(255)</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">5</td>
-			<td>支店名/Chi&#32;nhánh</td>
-			<td>billing_bank_branch</td>
-			<td>varchar(50)</td>
+			<td>Nội&#32;dung</td>
+			<td>content</td>
+			<td>text</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">6</td>
-			<td>口座種別/Loại&#32;tài&#32;khoản</td>
-			<td>billing_bank_type</td>
-			<td>tinyint&#32;unsigned</td>
+			<td>Phạm&#32;vi&#32;gửi&#32;thông&#32;báo</td>
+			<td>scope</td>
+			<td>enum('all','selected_recipients')</td>
 			<td>Yes</td>
-			<td></td>
-			<td>1.普通,&#32;2.当座</td>
+			<td>'all'</td>
+			<td>all:&#32;toàn&#32;bộ,&#32;selected_recipients:&#32;người&#32;nhận&#32;được&#32;chọn</td>
 		</tr>
 		<tr>
 			<td class="number-format">7</td>
-			<td>口座番号/Số&#32;toàn&#32;khoản</td>
-			<td>billing_bank_number</td>
-			<td>varchar(20)</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">8</td>
-			<td>口座名義/Tên&#32;tài&#32;khoản</td>
-			<td>billing_bank_name</td>
-			<td>varchar(50)</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">9</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -151,12 +133,30 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">10</td>
+			<td class="number-format">8</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
 			<td></td>
 			<td>null</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">9</td>
+			<td>Người&#32;tạo</td>
+			<td>created_by</td>
+			<td>bigint</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">10</td>
+			<td>Người&#32;cập&#32;nhật</td>
+			<td>updated_by</td>
+			<td>bigint</td>
+			<td></td>
+			<td></td>
 			<td></td>
 		</tr>
 	</table>
@@ -183,13 +183,6 @@
 			<td>PRIMARY</td>
 			<td>id</td>
 			<td>Yes</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">2</td>
-			<td>service_provider_bank_accounts_service_provider_id_foreign</td>
-			<td>service_provider_id</td>
-			<td></td>
 			<td></td>
 		</tr>
 	</table>
@@ -236,15 +229,6 @@
 			<th>参照先カラムリスト</th>
 			<th>ON DELETE</th>
 			<th>ON UPDATE</th>
-		</tr>
-		<tr>
-			<td class="number-format">1</td>
-			<td>maimiru.service_provider_bank_accounts_service_provider_id_foreign</td>
-			<td>service_provider_id</td>
-			<td><a href="maimiru.service_providers.html">maimiru.service_providers</td>
-			<td>id</td>
-			<td>CASCADE</td>
-			<td>NO&#32;ACTION</td>
 		</tr>
 	</table>
 

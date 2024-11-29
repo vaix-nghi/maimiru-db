@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+		<title>テーブル定義書&#32;マイみーる　食数管理システム&#32;Phase1</title>
+		<link rel="stylesheet" href="a5m2.css">
+	</head>
+	<body>
+	<div class="tableinfo-caption" style="width: 912px;">
+		<table>
+			<colgroup>
+				<col width="300">
+				<col width="300">
+			</colgroup>
+			<tr>
+			<th>事業所情報/Trường học/doanh nghiệp</th>
+			<td>clients</td>
+			</tr>
+		</table>
+	</div>
+	<div class="tableinfo-caption-stuffing"></div>
+
+	<table>
+		<caption>テーブル情報</caption>
+			<colgroup>
+				<col width="150">
+				<col width="305">
+				<col width="150">
+				<col width="305">
+			</colgroup>
+			<th>システム名</th>
+			<td>マイみーる　食数管理システム</td>
+			<th>作成者</th>
+			<td>Le&#32;Thanh&#32;Nghi</td>
+		</tr>
+		<tr>
+			<th>サブシステム名</th>
+			<td>Phase1</td>
+			<th>作成日</th>
+			<td>2024/11/30</td>
+		</tr>
+		<tr>
+			<th>RDBMS</th>
+			<td colspan="3"> 8.0.30</td>
+		</tr>
+		<tr>
+			<td colspan="4"><b>備考</b><br></td>
+		</tr>
+	</table>
+
+<br>
+	<table>
+		<caption>カラム情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="170">
+				<col width="170">
+				<col width="200">
+				<col width="80">
+				<col width="120">
+				<col width="140">
+			</colgroup>
+		<tr>
+			<th>No.</th>
+			<th>論理名</th>
+			<th>物理名</th>
+			<th>データ型</th>
+			<th>Not Null</th>
+			<th>デフォルト</th>
+			<th>備考</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td></td>
+			<td>id</td>
+			<td>bigint&#32;unsigned&#32;auto_increment</td>
+			<td>Yes (PK)</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td></td>
+			<td>service_provider_id</td>
+			<td>bigint&#32;unsigned</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">3</td>
+			<td>事業所コード/Code</td>
+			<td>code</td>
+			<td>varchar(12)</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">4</td>
+			<td>事業所名/Tên&#32;công&#32;ty&#32;thực&#32;phẩm</td>
+			<td>name</td>
+			<td>varchar(128)</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">5</td>
+			<td>事業所名（略称）/Tên&#32;viết&#32;tắt</td>
+			<td>short_name</td>
+			<td>varchar(30)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">6</td>
+			<td>郵便番号/Mã&#32;bưu&#32;điện</td>
+			<td>postcode</td>
+			<td>varchar(8)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">7</td>
+			<td>都道府県/Tỉnh</td>
+			<td>prefecture</td>
+			<td>varchar(7)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">8</td>
+			<td>住所1/Địa&#32;chỉ&#32;1</td>
+			<td>address1</td>
+			<td>varchar(155)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">9</td>
+			<td>住所2/Địa&#32;chỉ&#32;2</td>
+			<td>address2</td>
+			<td>varchar(155)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">10</td>
+			<td>住所3/Địa&#32;chỉ&#32;3</td>
+			<td>address3</td>
+			<td>varchar(155)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">11</td>
+			<td>電話番号/Điện&#32;thoại</td>
+			<td>tel</td>
+			<td>varchar(15)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">12</td>
+			<td>FAX/fax</td>
+			<td>fax</td>
+			<td>varchar(15)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">13</td>
+			<td>利用者決済方法/Cách&#32;quyết&#32;toán&#32;đối&#32;với&#32;user</td>
+			<td>user_pay_type</td>
+			<td>tinyint&#32;unsigned</td>
+			<td>Yes</td>
+			<td></td>
+			<td>1.売掛</td>
+		</tr>
+		<tr>
+			<td class="number-format">14</td>
+			<td>集金方法/Phương&#32;thức&#32;thu&#32;tiền</td>
+			<td>money_collection_method</td>
+			<td>tinyint&#32;unsigned</td>
+			<td>Yes</td>
+			<td></td>
+			<td>1.&#32;振替,2.&#32;振込</td>
+		</tr>
+		<tr>
+			<td class="number-format">15</td>
+			<td>契約開始日/Ngày&#32;ký&#32;hợp&#32;đồng</td>
+			<td>contract_start_date</td>
+			<td>date</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">16</td>
+			<td>契約終了日/Ngày&#32;kết&#32;thúc&#32;hợp&#32;đồng</td>
+			<td>contract_end_date</td>
+			<td>date</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">17</td>
+			<td>システム利用料/Phí&#32;sử&#32;dụng&#32;hệ&#32;thống</td>
+			<td>system_use_fee</td>
+			<td>decimal(10,2)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">18</td>
+			<td>登録番号（インボイス）/Số&#32;đăng&#32;ký&#32;invoice</td>
+			<td>invoice_number</td>
+			<td>varchar(15)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">19</td>
+			<td>請求先住所/Địa&#32;chỉ&#32;yêu&#32;cầu&#32;thanh&#32;toán</td>
+			<td>billing_address</td>
+			<td>varchar(255)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">20</td>
+			<td>銀行名/Tên&#32;ngân&#32;hàng</td>
+			<td>billing_bank_account</td>
+			<td>varchar(50)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">21</td>
+			<td>支店名/Chi&#32;nhánh</td>
+			<td>billing_bank_branch</td>
+			<td>varchar(50)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">22</td>
+			<td>口座種別/Loại&#32;tài&#32;khoản</td>
+			<td>billing_bank_type</td>
+			<td>tinyint&#32;unsigned</td>
+			<td></td>
+			<td></td>
+			<td>1.普通,&#32;2.当座</td>
+		</tr>
+		<tr>
+			<td class="number-format">23</td>
+			<td>口座番号/Số&#32;toàn&#32;khoản</td>
+			<td>billing_bank_number</td>
+			<td>varchar(20)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">24</td>
+			<td>口座名義/Tên&#32;tài&#32;khoản</td>
+			<td>billing_bank_name</td>
+			<td>varchar(50)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">25</td>
+			<td>請求書備考/Ghi&#32;chú&#32;cho&#32;yêu&#32;cầu&#32;thanh&#32;toán</td>
+			<td>billing_note</td>
+			<td>text</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">26</td>
+			<td></td>
+			<td>created_at</td>
+			<td>timestamp</td>
+			<td></td>
+			<td>null</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">27</td>
+			<td></td>
+			<td>updated_at</td>
+			<td>timestamp</td>
+			<td></td>
+			<td>null</td>
+			<td></td>
+		</tr>
+	</table>
+
+<br>
+	<table>
+		<caption>インデックス情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="170">
+				<col width="170">
+				<col width="70">
+				<col width="470">
+			</colgroup>
+		<tr>
+			<th>No.</th>
+			<th>インデックス名</th>
+			<th>カラムリスト</th>
+			<th>ユニーク</th>
+			<th>オプション</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>PRIMARY</td>
+			<td>id</td>
+			<td>Yes</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>clients_code_unique</td>
+			<td>code</td>
+			<td>制約</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">3</td>
+			<td>clients_service_provider_id_foreign</td>
+			<td>service_provider_id</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+
+<br>
+	<table>
+		<caption>制約情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="170">
+				<col width="170">
+				<col width="540">
+			</colgroup>
+		<tr>
+			<th>No.</th>
+			<th>制約名</th>
+			<th>種類</th>
+			<th>制約定義</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>PRIMARY</td>
+			<td>PRIMARY&#32;KEY</td>
+			<td>id</td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>clients_code_unique</td>
+			<td>UNIQUE</td>
+			<td>code</td>
+		</tr>
+	</table>
+
+<br>
+	<table>
+		<caption>外部キー情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="170">
+				<col width="170">
+				<col width="170">
+				<col width="170">
+				<col width="100">
+				<col width="100">
+			</colgroup>
+			<th>No.</th>
+			<th>外部キー名</th>
+			<th>カラムリスト</th>
+			<th>参照先</th>
+			<th>参照先カラムリスト</th>
+			<th>ON DELETE</th>
+			<th>ON UPDATE</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>clients_service_provider_id_foreign</td>
+			<td>service_provider_id</td>
+			<td><a href="service_providers.html">service_providers</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+	</table>
+
+<br>
+	<table>
+		<caption>外部キー情報(PK側)</caption>
+			<colgroup>
+				<col width="30">
+				<col width="170">
+				<col width="170">
+				<col width="170">
+				<col width="170">
+				<col width="100">
+				<col width="100">
+			</colgroup>
+		<tr>
+			<th>No.</th>
+			<th>外部キー名</th>
+			<th>カラムリスト</th>
+			<th>参照元</th>
+			<th>参照元カラムリスト</th>
+			<th>ON DELETE</th>
+			<th>ON UPDATE</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>client_admins_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="client_admins.html">client_admins</td>
+			<td>client_id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>client_settings_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="client_settings.html">client_settings</td>
+			<td>client_id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">3</td>
+			<td>departments_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="departments.html">departments</td>
+			<td>client_id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">4</td>
+			<td>menu_price_categories_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="menu_price_categories.html">menu_price_categories</td>
+			<td>client_id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">5</td>
+			<td>menus_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="menus.html">menus</td>
+			<td>client_id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">6</td>
+			<td>service_users_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="service_users.html">service_users</td>
+			<td>client_id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">7</td>
+			<td>tmp_orders_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="tmp_orders.html">tmp_orders</td>
+			<td>client_id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+	</table>
+
+
+	</body>
+</html>

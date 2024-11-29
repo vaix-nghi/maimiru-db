@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th>Log hoạt động của user</th>
-			<td>maimiru . operation_log</td>
+			<th>販売先口座情報/Tài khoản ngân hàng CTTP</th>
+			<td>service_provider_bank_accounts</td>
 			</tr>
 		</table>
 	</div>
@@ -31,13 +31,13 @@
 			<th>システム名</th>
 			<td>マイみーる　食数管理システム</td>
 			<th>作成者</th>
-			<td>レ　タン　ニー</td>
+			<td>Le&#32;Thanh&#32;Nghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/11/26</td>
+			<td>2024/11/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -71,7 +71,7 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td>ID&#32;log</td>
+			<td></td>
 			<td>id</td>
 			<td>bigint&#32;unsigned&#32;auto_increment</td>
 			<td>Yes (PK)</td>
@@ -80,52 +80,70 @@
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td>ID&#32;user</td>
-			<td>user_id</td>
-			<td>int</td>
+			<td></td>
+			<td>service_provider_id</td>
+			<td>bigint&#32;unsigned</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td>Thời&#32;gian&#32;diễn&#32;ra&#32;activity</td>
-			<td>date_time</td>
-			<td>timestamp</td>
-			<td>Yes</td>
-			<td>null</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">4</td>
-			<td>Hoạt&#32;động</td>
-			<td>action</td>
-			<td>int</td>
-			<td>Yes</td>
-			<td></td>
-			<td>1:login,&#32;2:add,&#32;3:edit,&#32;4:delete</td>
-		</tr>
-		<tr>
-			<td class="number-format">5</td>
-			<td>Chức&#32;năng</td>
-			<td>function</td>
-			<td>int</td>
-			<td>Yes</td>
-			<td></td>
-			<td>1:&#32;Login,&#32;2:&#32;User.&#32;3:&#32;Project</td>
-		</tr>
-		<tr>
-			<td class="number-format">6</td>
-			<td>Ghi&#32;chú</td>
-			<td>note</td>
+			<td>請求先住所/Địa&#32;chỉ&#32;yêu&#32;cầu&#32;thanh&#32;toán</td>
+			<td>billing_address</td>
 			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
+			<td class="number-format">4</td>
+			<td>銀行名/Tên&#32;ngân&#32;hàng</td>
+			<td>billing_bank_account</td>
+			<td>varchar(50)</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">5</td>
+			<td>支店名/Chi&#32;nhánh</td>
+			<td>billing_bank_branch</td>
+			<td>varchar(50)</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">6</td>
+			<td>口座種別/Loại&#32;tài&#32;khoản</td>
+			<td>billing_bank_type</td>
+			<td>tinyint&#32;unsigned</td>
+			<td>Yes</td>
+			<td></td>
+			<td>1.普通,&#32;2.当座</td>
+		</tr>
+		<tr>
 			<td class="number-format">7</td>
-			<td>created_at</td>
+			<td>口座番号/Số&#32;toàn&#32;khoản</td>
+			<td>billing_bank_number</td>
+			<td>varchar(20)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">8</td>
+			<td>口座名義/Tên&#32;tài&#32;khoản</td>
+			<td>billing_bank_name</td>
+			<td>varchar(50)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">9</td>
+			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
 			<td></td>
@@ -133,8 +151,8 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">8</td>
-			<td>updated_at</td>
+			<td class="number-format">10</td>
+			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
 			<td></td>
@@ -165,6 +183,13 @@
 			<td>PRIMARY</td>
 			<td>id</td>
 			<td>Yes</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>service_provider_bank_accounts_service_provider_id_foreign</td>
+			<td>service_provider_id</td>
+			<td></td>
 			<td></td>
 		</tr>
 	</table>
@@ -211,6 +236,15 @@
 			<th>参照先カラムリスト</th>
 			<th>ON DELETE</th>
 			<th>ON UPDATE</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>service_provider_bank_accounts_service_provider_id_foreign</td>
+			<td>service_provider_id</td>
+			<td><a href="service_providers.html">service_providers</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
 		</tr>
 	</table>
 

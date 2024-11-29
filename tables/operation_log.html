@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th></th>
-			<td>maimiru . tmp_order_details</td>
+			<th>Log hoạt động của user</th>
+			<td>operation_log</td>
 			</tr>
 		</table>
 	</div>
@@ -31,13 +31,13 @@
 			<th>システム名</th>
 			<td>マイみーる　食数管理システム</td>
 			<th>作成者</th>
-			<td>レ　タン　ニー</td>
+			<td>Le&#32;Thanh&#32;Nghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/11/26</td>
+			<td>2024/11/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -71,7 +71,7 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td></td>
+			<td>ID&#32;log</td>
 			<td>id</td>
 			<td>bigint&#32;unsigned&#32;auto_increment</td>
 			<td>Yes (PK)</td>
@@ -80,42 +80,51 @@
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td></td>
-			<td>tmp_order_id</td>
-			<td>bigint&#32;unsigned</td>
+			<td>ID&#32;user</td>
+			<td>user_id</td>
+			<td>int</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td>日/Ngày&#32;ăn</td>
-			<td>eat_date</td>
-			<td>date</td>
+			<td>Thời&#32;gian&#32;diễn&#32;ra&#32;activity</td>
+			<td>date_time</td>
+			<td>timestamp</td>
 			<td>Yes</td>
-			<td></td>
+			<td>null</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">4</td>
-			<td>喫食メニューIDs&#32;/&#32;JSON&#32;/&#32;Các&#32;menu&#32;sẽ&#32;ăn</td>
-			<td>eat_menus</td>
-			<td>json</td>
+			<td>Hoạt&#32;động</td>
+			<td>action</td>
+			<td>int</td>
+			<td>Yes</td>
 			<td></td>
-			<td></td>
-			<td></td>
+			<td>1:login,&#32;2:add,&#32;3:edit,&#32;4:delete</td>
 		</tr>
 		<tr>
 			<td class="number-format">5</td>
-			<td>締切日/Deadline&#32;hủy&#32;bữa</td>
-			<td>order_deadline</td>
-			<td>date</td>
+			<td>Chức&#32;năng</td>
+			<td>function</td>
+			<td>int</td>
+			<td>Yes</td>
+			<td></td>
+			<td>1:&#32;Login,&#32;2:&#32;User.&#32;3:&#32;Project</td>
+		</tr>
+		<tr>
+			<td class="number-format">6</td>
+			<td>Ghi&#32;chú</td>
+			<td>note</td>
+			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">6</td>
+			<td class="number-format">7</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -124,7 +133,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">7</td>
+			<td class="number-format">8</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
@@ -156,13 +165,6 @@
 			<td>PRIMARY</td>
 			<td>id</td>
 			<td>Yes</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">2</td>
-			<td>tmp_order_details_tmp_order_id_foreign</td>
-			<td>tmp_order_id</td>
-			<td></td>
 			<td></td>
 		</tr>
 	</table>
@@ -209,15 +211,6 @@
 			<th>参照先カラムリスト</th>
 			<th>ON DELETE</th>
 			<th>ON UPDATE</th>
-		</tr>
-		<tr>
-			<td class="number-format">1</td>
-			<td>maimiru.tmp_order_details_tmp_order_id_foreign</td>
-			<td>tmp_order_id</td>
-			<td><a href="maimiru.tmp_orders.html">maimiru.tmp_orders</td>
-			<td>id</td>
-			<td>CASCADE</td>
-			<td>NO&#32;ACTION</td>
 		</tr>
 	</table>
 

@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th></th>
-			<td>maimiru . client_admins</td>
+			<th>お知らせテンプレート/Mẫu thông báo</th>
+			<td>notification_templates</td>
 			</tr>
 		</table>
 	</div>
@@ -31,13 +31,13 @@
 			<th>システム名</th>
 			<td>マイみーる　食数管理システム</td>
 			<th>作成者</th>
-			<td>レ　タン　ニー</td>
+			<td>Le&#32;Thanh&#32;Nghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/11/26</td>
+			<td>2024/11/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -80,51 +80,24 @@
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td></td>
-			<td>client_id</td>
-			<td>bigint&#32;unsigned</td>
+			<td>タイトル/Title</td>
+			<td>title</td>
+			<td>varchar(255)</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td>担当部署名/Bộ&#32;phận&#32;của&#32;người&#32;quản&#32;lý</td>
-			<td>admin_department</td>
-			<td>varchar(100)</td>
-			<td></td>
+			<td>本文/Body</td>
+			<td>body</td>
+			<td>text</td>
+			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">4</td>
-			<td>担当者名/Tên&#32;người&#32;quản&#32;lý</td>
-			<td>admin_name</td>
-			<td>varchar(100)</td>
-			<td>Yes</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">5</td>
-			<td>管理ユーザーID/User&#32;ID&#32;của&#32;người&#32;quản&#32;lý</td>
-			<td>user_id</td>
-			<td>bigint</td>
-			<td>Yes</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">6</td>
-			<td>表示順/Thứ&#32;tự&#32;hiển&#32;thị</td>
-			<td>idx</td>
-			<td>int&#32;unsigned</td>
-			<td>Yes</td>
-			<td>0</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">7</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -133,7 +106,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">8</td>
+			<td class="number-format">5</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
@@ -165,13 +138,6 @@
 			<td>PRIMARY</td>
 			<td>id</td>
 			<td>Yes</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">2</td>
-			<td>client_admins_client_id_foreign</td>
-			<td>client_id</td>
-			<td></td>
 			<td></td>
 		</tr>
 	</table>
@@ -218,15 +184,6 @@
 			<th>参照先カラムリスト</th>
 			<th>ON DELETE</th>
 			<th>ON UPDATE</th>
-		</tr>
-		<tr>
-			<td class="number-format">1</td>
-			<td>maimiru.client_admins_client_id_foreign</td>
-			<td>client_id</td>
-			<td><a href="maimiru.clients.html">maimiru.clients</td>
-			<td>id</td>
-			<td>CASCADE</td>
-			<td>NO&#32;ACTION</td>
 		</tr>
 	</table>
 

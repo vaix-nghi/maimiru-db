@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th>Dữ liệu ngày nghỉ, lễ, tết</th>
-			<td>maimiru . holidays</td>
+			<th>販売先管理者情報/Người quản lý của CTTP</th>
+			<td>service_provider_admins</td>
 			</tr>
 		</table>
 	</div>
@@ -31,13 +31,13 @@
 			<th>システム名</th>
 			<td>マイみーる　食数管理システム</td>
 			<th>作成者</th>
-			<td>レ　タン　ニー</td>
+			<td>Le&#32;Thanh&#32;Nghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/11/26</td>
+			<td>2024/11/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -71,7 +71,7 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td>ID&#32;ngày&#32;nghỉ</td>
+			<td></td>
 			<td>id</td>
 			<td>bigint&#32;unsigned&#32;auto_increment</td>
 			<td>Yes (PK)</td>
@@ -81,7 +81,7 @@
 		<tr>
 			<td class="number-format">2</td>
 			<td></td>
-			<td>client_id</td>
+			<td>service_provider_id</td>
 			<td>bigint&#32;unsigned</td>
 			<td>Yes</td>
 			<td></td>
@@ -89,56 +89,56 @@
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td>Ngày&#32;nghỉ</td>
-			<td>day</td>
-			<td>date</td>
-			<td>Yes</td>
+			<td>担当部署名/Bộ&#32;phận&#32;của&#32;người&#32;quản&#32;lý</td>
+			<td>manager_department</td>
+			<td>varchar(50)</td>
+			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">4</td>
-			<td>Ghi&#32;chú</td>
-			<td>note</td>
+			<td>担当者名/Tên&#32;người&#32;quản&#32;lý</td>
+			<td>manager_name</td>
+			<td>varchar(50)</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">5</td>
+			<td>管理ユーザーID/User&#32;ID&#32;của&#32;người&#32;quản&#32;lý</td>
+			<td>user_id</td>
+			<td>bigint</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">6</td>
+			<td>管理用のWEBURL/URL&#32;trang&#32;quản&#32;lý</td>
+			<td>web_url_for_manager</td>
 			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">5</td>
-			<td>created_at</td>
-			<td>created_at</td>
-			<td>timestamp</td>
-			<td></td>
-			<td>null</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">6</td>
-			<td>updated_at</td>
-			<td>updated_at</td>
-			<td>timestamp</td>
-			<td></td>
-			<td>null</td>
-			<td></td>
-		</tr>
-		<tr>
 			<td class="number-format">7</td>
-			<td>Người&#32;tạo</td>
-			<td>created_by</td>
-			<td>bigint</td>
 			<td></td>
+			<td>created_at</td>
+			<td>timestamp</td>
 			<td></td>
+			<td>null</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">8</td>
-			<td>Người&#32;cập&#32;nhật</td>
-			<td>updated_by</td>
-			<td>bigint</td>
 			<td></td>
+			<td>updated_at</td>
+			<td>timestamp</td>
 			<td></td>
+			<td>null</td>
 			<td></td>
 		</tr>
 	</table>
@@ -165,6 +165,13 @@
 			<td>PRIMARY</td>
 			<td>id</td>
 			<td>Yes</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>service_provider_admins_service_provider_id_foreign</td>
+			<td>service_provider_id</td>
+			<td></td>
 			<td></td>
 		</tr>
 	</table>
@@ -211,6 +218,15 @@
 			<th>参照先カラムリスト</th>
 			<th>ON DELETE</th>
 			<th>ON UPDATE</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>service_provider_admins_service_provider_id_foreign</td>
+			<td>service_provider_id</td>
+			<td><a href="service_providers.html">service_providers</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
 		</tr>
 	</table>
 

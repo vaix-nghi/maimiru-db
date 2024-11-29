@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th></th>
-			<td>maimiru . entry_exit_applications</td>
+			<th>やり取りメッセージ/Message trao đổi</th>
+			<td>chat_messages</td>
 			</tr>
 		</table>
 	</div>
@@ -31,13 +31,13 @@
 			<th>システム名</th>
 			<td>マイみーる　食数管理システム</td>
 			<th>作成者</th>
-			<td>レ　タン　ニー</td>
+			<td>Le&#32;Thanh&#32;Nghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/11/26</td>
+			<td>2024/11/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -80,8 +80,8 @@
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td>事業所ID/ID&#32;trường&#32;học/doanh&#32;nghiệp</td>
-			<td>client_id</td>
+			<td>関連対象ID/ID&#32;đối&#32;tượng&#32;liên&#32;quan</td>
+			<td>target_id</td>
 			<td>bigint&#32;unsigned</td>
 			<td>Yes</td>
 			<td></td>
@@ -89,60 +89,42 @@
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td>利用者ID/ID&#32;người&#32;dùng</td>
-			<td>service_user_id</td>
+			<td>関連対象タイプ/Loại&#32;đối&#32;tượng</td>
+			<td>target_type</td>
+			<td>tinyint</td>
+			<td>Yes</td>
+			<td></td>
+			<td>&#32;1.đặt&#32;lịch&#32;suất&#32;ăn,&#32;2.Invoice</td>
+		</tr>
+		<tr>
+			<td class="number-format">4</td>
+			<td>ユーザーID/User&#32;ID</td>
+			<td>user_id</td>
 			<td>bigint&#32;unsigned</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">4</td>
-			<td>移動区分/Loại&#32;vào&#32;ra</td>
-			<td>entry_exit_category</td>
-			<td>tinyint</td>
-			<td>Yes</td>
-			<td></td>
-			<td>&#32;1.Ra&#32;trường,&#32;2.Nghỉ&#32;học,&#32;3.Chưa&#32;thanh&#32;toán</td>
-		</tr>
-		<tr>
 			<td class="number-format">5</td>
-			<td>移動日/Ngày&#32;vào&#32;ra</td>
-			<td>entry_exit_date</td>
-			<td>date</td>
+			<td>メッセージ/Nội&#32;dung&#32;tin&#32;nhắn</td>
+			<td>message</td>
+			<td>text</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">6</td>
-			<td>移動タイミング/Thời&#32;điểm&#32;bắt&#32;đầu&#32;vào&#32;ra</td>
-			<td>entry_exit_timing</td>
-			<td>time</td>
+			<td>投稿日時/Ngày&#32;giờ&#32;gửi&#32;tin&#32;nhắn</td>
+			<td>post_dt</td>
+			<td>timestamp</td>
 			<td>Yes</td>
-			<td></td>
+			<td>CURRENT_TIMESTAMP</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">7</td>
-			<td>特記事項/Ghi&#32;chú</td>
-			<td>notes</td>
-			<td>text</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">8</td>
-			<td>承認状態/Trạng&#32;thái&#32;xử&#32;lý</td>
-			<td>status</td>
-			<td>tinyint</td>
-			<td>Yes</td>
-			<td>1</td>
-			<td>&#32;1.Đang&#32;chờ,&#32;2.Đã&#32;xác&#32;nhận,&#32;9.Cancel</td>
-		</tr>
-		<tr>
-			<td class="number-format">9</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -151,7 +133,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">10</td>
+			<td class="number-format">8</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>

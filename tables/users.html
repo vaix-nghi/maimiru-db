@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th></th>
-			<td>maimiru . menu_prices</td>
+			<th>Dữ liệu người dùng</th>
+			<td>users</td>
 			</tr>
 		</table>
 	</div>
@@ -31,13 +31,13 @@
 			<th>システム名</th>
 			<td>マイみーる　食数管理システム</td>
 			<th>作成者</th>
-			<td>レ　タン　ニー</td>
+			<td>Le&#32;Thanh&#32;Nghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/11/26</td>
+			<td>2024/11/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -80,33 +80,114 @@
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td>メニュー変更履歴ID/ID&#32;lịch&#32;sử&#32;thay&#32;đổi&#32;menu</td>
-			<td>menu_changed_id</td>
-			<td>bigint&#32;unsigned</td>
-			<td></td>
+			<td>名前/Tên</td>
+			<td>name</td>
+			<td>varchar(255)</td>
+			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td>価格内訳ID/ID&#32;category&#32;đơn&#32;giá</td>
-			<td>menu_price_category_id</td>
-			<td>bigint&#32;unsigned</td>
+			<td></td>
+			<td>email</td>
+			<td>varchar(255)</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">4</td>
-			<td>価格/Giá</td>
-			<td>price</td>
-			<td>int&#32;unsigned</td>
+			<td></td>
+			<td>email_verified_at</td>
+			<td>timestamp</td>
+			<td></td>
+			<td>null</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">5</td>
+			<td>Mật&#32;khẩu</td>
+			<td>password</td>
+			<td>varchar(255)</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">5</td>
+			<td class="number-format">6</td>
+			<td></td>
+			<td>two_factor_secret</td>
+			<td>text</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">7</td>
+			<td></td>
+			<td>two_factor_recovery_codes</td>
+			<td>text</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">8</td>
+			<td></td>
+			<td>two_factor_confirmed_at</td>
+			<td>timestamp</td>
+			<td></td>
+			<td>null</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">9</td>
+			<td></td>
+			<td>remember_token</td>
+			<td>varchar(100)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">10</td>
+			<td></td>
+			<td>current_team_id</td>
+			<td>bigint&#32;unsigned</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">11</td>
+			<td></td>
+			<td>profile_photo_path</td>
+			<td>varchar(2048)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">12</td>
+			<td>ロール・Loại&#32;user</td>
+			<td>role</td>
+			<td>tinyint&#32;unsigned</td>
+			<td>Yes</td>
+			<td></td>
+			<td>1.normal_user,&#32;2.deptor,&#32;3.Nhà&#32;bếp,&#32;4.client_admin,&#32;5.service_admin,&#32;9.system_owner,&#32;99.system_admin</td>
+		</tr>
+		<tr>
+			<td class="number-format">13</td>
+			<td>ステータス・Trạng&#32;thái&#32;người&#32;dùng</td>
+			<td>status</td>
+			<td>tinyint&#32;unsigned</td>
+			<td>Yes</td>
+			<td>1</td>
+			<td>1.Active,&#32;2.Inactive</td>
+		</tr>
+		<tr>
+			<td class="number-format">14</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -115,7 +196,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">6</td>
+			<td class="number-format">15</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
@@ -149,6 +230,13 @@
 			<td>Yes</td>
 			<td></td>
 		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>users_email_unique</td>
+			<td>email</td>
+			<td>制約</td>
+			<td></td>
+		</tr>
 	</table>
 
 <br>
@@ -171,6 +259,12 @@
 			<td>PRIMARY</td>
 			<td>PRIMARY&#32;KEY</td>
 			<td>id</td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>users_email_unique</td>
+			<td>UNIQUE</td>
+			<td>email</td>
 		</tr>
 	</table>
 

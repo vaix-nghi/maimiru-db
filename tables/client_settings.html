@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th></th>
-			<td>maimiru . chat_messages</td>
+			<th>事業設定情報/Setting của trường học/doanh nghiệp</th>
+			<td>client_settings</td>
 			</tr>
 		</table>
 	</div>
@@ -31,13 +31,13 @@
 			<th>システム名</th>
 			<td>マイみーる　食数管理システム</td>
 			<th>作成者</th>
-			<td>レ　タン　ニー</td>
+			<td>Le&#32;Thanh&#32;Nghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/11/26</td>
+			<td>2024/11/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -80,8 +80,8 @@
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td>関連対象ID/ID&#32;đối&#32;tượng&#32;liên&#32;quan</td>
-			<td>target_id</td>
+			<td></td>
+			<td>client_id</td>
 			<td>bigint&#32;unsigned</td>
 			<td>Yes</td>
 			<td></td>
@@ -89,39 +89,39 @@
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td>関連対象タイプ/Loại&#32;đối&#32;tượng</td>
-			<td>target_type</td>
-			<td>tinyint</td>
+			<td>保護者同意要否&#32;/Cần&#32;sự&#32;đồng&#32;ý&#32;của&#32;phụ&#32;huynh</td>
+			<td>need_agreement_of_deptor</td>
+			<td>tinyint(1)</td>
 			<td>Yes</td>
-			<td></td>
-			<td>&#32;1.đặt&#32;lịch&#32;suất&#32;ăn,&#32;2.Invoice</td>
+			<td>0</td>
+			<td>0.Không&#32;cần,&#32;1.Cần</td>
 		</tr>
 		<tr>
 			<td class="number-format">4</td>
-			<td>ユーザーID/User&#32;ID</td>
-			<td>user_id</td>
-			<td>bigint&#32;unsigned</td>
+			<td>アレルゲン管理&#32;/Cần&#32;quản&#32;lý&#32;dị&#32;ứng</td>
+			<td>need_manage_allergy</td>
+			<td>tinyint(1)</td>
 			<td>Yes</td>
-			<td></td>
-			<td></td>
+			<td>0</td>
+			<td>0.Không&#32;cần,&#32;1.Cần</td>
 		</tr>
 		<tr>
 			<td class="number-format">5</td>
-			<td>メッセージ/Nội&#32;dung&#32;tin&#32;nhắn</td>
-			<td>message</td>
-			<td>text</td>
+			<td>選択食&#32;/Cho&#32;phép&#32;chọn&#32;bữa&#32;ăn</td>
+			<td>enable_select_meal</td>
+			<td>tinyint(1)</td>
 			<td>Yes</td>
-			<td></td>
-			<td></td>
+			<td>0</td>
+			<td>0.Không,&#32;1.Có</td>
 		</tr>
 		<tr>
 			<td class="number-format">6</td>
-			<td>投稿日時/Ngày&#32;giờ&#32;gửi&#32;tin&#32;nhắn</td>
-			<td>post_dt</td>
-			<td>timestamp</td>
+			<td>支払方法&#32;&#32;/Phương&#32;thức&#32;thanh&#32;toán</td>
+			<td>payment_method</td>
+			<td>int&#32;unsigned</td>
 			<td>Yes</td>
-			<td>CURRENT_TIMESTAMP</td>
-			<td></td>
+			<td>1</td>
+			<td>1.afterpaid,&#32;2.prepaid,&#32;3.credit</td>
 		</tr>
 		<tr>
 			<td class="number-format">7</td>
@@ -165,6 +165,13 @@
 			<td>PRIMARY</td>
 			<td>id</td>
 			<td>Yes</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>client_settings_client_id_foreign</td>
+			<td>client_id</td>
+			<td></td>
 			<td></td>
 		</tr>
 	</table>
@@ -211,6 +218,15 @@
 			<th>参照先カラムリスト</th>
 			<th>ON DELETE</th>
 			<th>ON UPDATE</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>client_settings_client_id_foreign</td>
+			<td>client_id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
 		</tr>
 	</table>
 

@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th></th>
-			<td>maimiru . department_menus</td>
+			<th>部門情報/Bộ phận</th>
+			<td>departments</td>
 			</tr>
 		</table>
 	</div>
@@ -31,13 +31,13 @@
 			<th>システム名</th>
 			<td>マイみーる　食数管理システム</td>
 			<th>作成者</th>
-			<td>レ　タン　ニー</td>
+			<td>Le&#32;Thanh&#32;Nghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/11/26</td>
+			<td>2024/11/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -81,7 +81,7 @@
 		<tr>
 			<td class="number-format">2</td>
 			<td></td>
-			<td>department_id</td>
+			<td>client_id</td>
 			<td>bigint&#32;unsigned</td>
 			<td>Yes</td>
 			<td></td>
@@ -90,14 +90,32 @@
 		<tr>
 			<td class="number-format">3</td>
 			<td></td>
-			<td>menu_id</td>
+			<td>parent_department_id</td>
 			<td>bigint&#32;unsigned</td>
-			<td>Yes</td>
+			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">4</td>
+			<td>部門名/Tên&#32;bộ&#32;phận</td>
+			<td>department_name</td>
+			<td>varchar(255)</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">5</td>
+			<td>注文方式/Phương&#32;thức&#32;order</td>
+			<td>order_method</td>
+			<td>enum('a','b','c')</td>
+			<td></td>
+			<td></td>
+			<td>&#32;a.Default&#32;ăn,&#32;b.Người&#32;dùng&#32;tự&#32;đặt,&#32;c.Admin&#32;đặt&#32;hộ</td>
+		</tr>
+		<tr>
+			<td class="number-format">6</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -106,7 +124,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">5</td>
+			<td class="number-format">7</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
@@ -142,15 +160,15 @@
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td>department_menus_department_id_foreign</td>
-			<td>department_id</td>
+			<td>departments_client_id_foreign</td>
+			<td>client_id</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td>department_menus_menu_id_foreign</td>
-			<td>menu_id</td>
+			<td>departments_parent_department_id_foreign</td>
+			<td>parent_department_id</td>
 			<td></td>
 			<td></td>
 		</tr>
@@ -201,18 +219,18 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td>maimiru.department_menus_department_id_foreign</td>
-			<td>department_id</td>
-			<td><a href="maimiru.departments.html">maimiru.departments</td>
+			<td>departments_client_id_foreign</td>
+			<td>client_id</td>
+			<td><a href="clients.html">clients</td>
 			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td>maimiru.department_menus_menu_id_foreign</td>
-			<td>menu_id</td>
-			<td><a href="maimiru.menus.html">maimiru.menus</td>
+			<td>departments_parent_department_id_foreign</td>
+			<td>parent_department_id</td>
+			<td><a href="departments.html">departments</td>
 			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
@@ -239,6 +257,33 @@
 			<th>参照元カラムリスト</th>
 			<th>ON DELETE</th>
 			<th>ON UPDATE</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>department_menus_department_id_foreign</td>
+			<td>id</td>
+			<td><a href="department_menus.html">department_menus</td>
+			<td>department_id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>departments_parent_department_id_foreign</td>
+			<td>id</td>
+			<td><a href="departments.html">departments</td>
+			<td>parent_department_id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">3</td>
+			<td>service_users_department_id_foreign</td>
+			<td>id</td>
+			<td><a href="service_users.html">service_users</td>
+			<td>department_id</td>
+			<td>SET&#32;NULL</td>
+			<td>NO&#32;ACTION</td>
 		</tr>
 	</table>
 
