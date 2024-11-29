@@ -1,0 +1,400 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+		<title>テーブル定義書&#32;マイみーる　食数管理システム&#32;Phase1</title>
+		<link rel="stylesheet" href="a5m2.css">
+	</head>
+	<body>
+	<div class="tableinfo-caption" style="width: 912px;">
+		<table>
+			<colgroup>
+				<col width="300">
+				<col width="300">
+			</colgroup>
+			<tr>
+			<th></th>
+			<td>maimiru . service_users</td>
+			</tr>
+		</table>
+	</div>
+	<div class="tableinfo-caption-stuffing"></div>
+
+	<table>
+		<caption>テーブル情報</caption>
+			<colgroup>
+				<col width="150">
+				<col width="305">
+				<col width="150">
+				<col width="305">
+			</colgroup>
+			<th>システム名</th>
+			<td>マイみーる　食数管理システム</td>
+			<th>作成者</th>
+			<td>レ　タン　ニー</td>
+		</tr>
+		<tr>
+			<th>サブシステム名</th>
+			<td>Phase1</td>
+			<th>作成日</th>
+			<td>2024/11/26</td>
+		</tr>
+		<tr>
+			<th>RDBMS</th>
+			<td colspan="3"> 8.0.30</td>
+		</tr>
+		<tr>
+			<td colspan="4"><b>備考</b><br></td>
+		</tr>
+	</table>
+
+<br>
+	<table>
+		<caption>カラム情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="170">
+				<col width="170">
+				<col width="200">
+				<col width="80">
+				<col width="120">
+				<col width="140">
+			</colgroup>
+		<tr>
+			<th>No.</th>
+			<th>論理名</th>
+			<th>物理名</th>
+			<th>データ型</th>
+			<th>Not Null</th>
+			<th>デフォルト</th>
+			<th>備考</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td></td>
+			<td>id</td>
+			<td>bigint&#32;unsigned&#32;auto_increment</td>
+			<td>Yes (PK)</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td></td>
+			<td>client_id</td>
+			<td>bigint&#32;unsigned</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">3</td>
+			<td>ユーザーID/User&#32;ID</td>
+			<td>user_id</td>
+			<td>bigint</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">4</td>
+			<td>利用者CD/Code&#32;người&#32;dùng</td>
+			<td>code</td>
+			<td>varchar(50)</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">5</td>
+			<td>利用者名/Tên&#32;người&#32;dùng</td>
+			<td>name</td>
+			<td>varchar(255)</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">6</td>
+			<td>利用者名カナ/Tên&#32;Kana</td>
+			<td>name_kana</td>
+			<td>varchar(255)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">7</td>
+			<td>性別/Giới&#32;tính</td>
+			<td>sex</td>
+			<td>tinyint</td>
+			<td>Yes</td>
+			<td></td>
+			<td>1.Nam,&#32;2.Nữ</td>
+		</tr>
+		<tr>
+			<td class="number-format">8</td>
+			<td>生年月日/Ngày&#32;tháng&#32;năm&#32;sinh</td>
+			<td>birthday</td>
+			<td>date</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">9</td>
+			<td></td>
+			<td>department_id</td>
+			<td>bigint&#32;unsigned</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">10</td>
+			<td>ICｶｰﾄﾞA&#32;/ID&#32;của&#32;IC&#32;card</td>
+			<td>ic_card_id</td>
+			<td>varchar(50)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">11</td>
+			<td>ICｶｰﾄﾞ情報/Thông&#32;tin&#32;của&#32;IC&#32;card</td>
+			<td>ic_card_info</td>
+			<td>text</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">12</td>
+			<td>備考/Ghi&#32;chú</td>
+			<td>notes</td>
+			<td>text</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">13</td>
+			<td>システム利用料/Phí&#32;sử&#32;dụng&#32;hệ&#32;thống</td>
+			<td>system_use_fee</td>
+			<td>decimal(10,2)</td>
+			<td>Yes</td>
+			<td>'0.00'</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">14</td>
+			<td>受注状態/Trạng&#32;thái&#32;được&#32;phép&#32;order</td>
+			<td>order_enabled_status</td>
+			<td>tinyint</td>
+			<td>Yes</td>
+			<td>1</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">15</td>
+			<td>受注終了日/Ngày&#32;kết&#32;thúc&#32;order</td>
+			<td>order_finish_date</td>
+			<td>date</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">16</td>
+			<td>利用状態/Trạng&#32;thái&#32;được&#32;phép&#32;sử&#32;dụng&#32;hệ&#32;thống</td>
+			<td>usable_status</td>
+			<td>tinyint</td>
+			<td>Yes</td>
+			<td>1</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">17</td>
+			<td>利用終了日/Ngày&#32;kết&#32;thúc&#32;sử&#32;dụng</td>
+			<td>usable_finish_date</td>
+			<td>date</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">18</td>
+			<td>利用終了理由/Lý&#32;do&#32;kết&#32;thúc&#32;sử&#32;dụng</td>
+			<td>usable_finish_reason</td>
+			<td>text</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">19</td>
+			<td>アレルギー素材　複数可能　カンマ区切り/Các&#32;mục&#32;dị&#32;ứng,&#32;phân&#32;cách&#32;bởi&#32;dấu&#32;phẩy</td>
+			<td>allergy_items</td>
+			<td>varchar(255)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">20</td>
+			<td></td>
+			<td>created_at</td>
+			<td>timestamp</td>
+			<td></td>
+			<td>null</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">21</td>
+			<td></td>
+			<td>updated_at</td>
+			<td>timestamp</td>
+			<td></td>
+			<td>null</td>
+			<td></td>
+		</tr>
+	</table>
+
+<br>
+	<table>
+		<caption>インデックス情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="170">
+				<col width="170">
+				<col width="70">
+				<col width="470">
+			</colgroup>
+		<tr>
+			<th>No.</th>
+			<th>インデックス名</th>
+			<th>カラムリスト</th>
+			<th>ユニーク</th>
+			<th>オプション</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>PRIMARY</td>
+			<td>id</td>
+			<td>Yes</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>service_users_client_id_foreign</td>
+			<td>client_id</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">3</td>
+			<td>service_users_department_id_foreign</td>
+			<td>department_id</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+
+<br>
+	<table>
+		<caption>制約情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="170">
+				<col width="170">
+				<col width="540">
+			</colgroup>
+		<tr>
+			<th>No.</th>
+			<th>制約名</th>
+			<th>種類</th>
+			<th>制約定義</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>PRIMARY</td>
+			<td>PRIMARY&#32;KEY</td>
+			<td>id</td>
+		</tr>
+	</table>
+
+<br>
+	<table>
+		<caption>外部キー情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="170">
+				<col width="170">
+				<col width="170">
+				<col width="170">
+				<col width="100">
+				<col width="100">
+			</colgroup>
+			<th>No.</th>
+			<th>外部キー名</th>
+			<th>カラムリスト</th>
+			<th>参照先</th>
+			<th>参照先カラムリスト</th>
+			<th>ON DELETE</th>
+			<th>ON UPDATE</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>maimiru.service_users_client_id_foreign</td>
+			<td>client_id</td>
+			<td><a href="maimiru.clients.html">maimiru.clients</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>maimiru.service_users_department_id_foreign</td>
+			<td>department_id</td>
+			<td><a href="maimiru.departments.html">maimiru.departments</td>
+			<td>id</td>
+			<td>SET&#32;NULL</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+	</table>
+
+<br>
+	<table>
+		<caption>外部キー情報(PK側)</caption>
+			<colgroup>
+				<col width="30">
+				<col width="170">
+				<col width="170">
+				<col width="170">
+				<col width="170">
+				<col width="100">
+				<col width="100">
+			</colgroup>
+		<tr>
+			<th>No.</th>
+			<th>外部キー名</th>
+			<th>カラムリスト</th>
+			<th>参照元</th>
+			<th>参照元カラムリスト</th>
+			<th>ON DELETE</th>
+			<th>ON UPDATE</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>maimiru.deptors_service_user_id_foreign</td>
+			<td>id</td>
+			<td><a href="maimiru.deptors.html">maimiru.deptors</td>
+			<td>service_user_id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+	</table>
+
+
+	</body>
+</html>

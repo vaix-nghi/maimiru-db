@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+		<title>テーブル定義書&#32;マイみーる　食数管理システム&#32;Phase1</title>
+		<link rel="stylesheet" href="a5m2.css">
+	</head>
+	<body>
+	<div class="tableinfo-caption" style="width: 912px;">
+		<table>
+			<colgroup>
+				<col width="300">
+				<col width="300">
+			</colgroup>
+			<tr>
+			<th></th>
+			<td>maimiru . menus</td>
+			</tr>
+		</table>
+	</div>
+	<div class="tableinfo-caption-stuffing"></div>
+
+	<table>
+		<caption>テーブル情報</caption>
+			<colgroup>
+				<col width="150">
+				<col width="305">
+				<col width="150">
+				<col width="305">
+			</colgroup>
+			<th>システム名</th>
+			<td>マイみーる　食数管理システム</td>
+			<th>作成者</th>
+			<td>レ　タン　ニー</td>
+		</tr>
+		<tr>
+			<th>サブシステム名</th>
+			<td>Phase1</td>
+			<th>作成日</th>
+			<td>2024/11/26</td>
+		</tr>
+		<tr>
+			<th>RDBMS</th>
+			<td colspan="3"> 8.0.30</td>
+		</tr>
+		<tr>
+			<td colspan="4"><b>備考</b><br></td>
+		</tr>
+	</table>
+
+<br>
+	<table>
+		<caption>カラム情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="170">
+				<col width="170">
+				<col width="200">
+				<col width="80">
+				<col width="120">
+				<col width="140">
+			</colgroup>
+		<tr>
+			<th>No.</th>
+			<th>論理名</th>
+			<th>物理名</th>
+			<th>データ型</th>
+			<th>Not Null</th>
+			<th>デフォルト</th>
+			<th>備考</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td></td>
+			<td>id</td>
+			<td>bigint&#32;unsigned&#32;auto_increment</td>
+			<td>Yes (PK)</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td></td>
+			<td>client_id</td>
+			<td>bigint&#32;unsigned</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">3</td>
+			<td>給食メニュー名&#32;/Tên&#32;menu</td>
+			<td>menu_name</td>
+			<td>varchar(255)</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">4</td>
+			<td>表示用メニュー名&#32;/Tên&#32;menu&#32;để&#32;hiển&#32;thị</td>
+			<td>menu_name_for_display</td>
+			<td>varchar(255)</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">5</td>
+			<td>略称/Tên&#32;vắn&#32;tắt</td>
+			<td>short_menu_name</td>
+			<td>varchar(10)</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">6</td>
+			<td>カレンダーの色/Màu&#32;sắc</td>
+			<td>calendar_color</td>
+			<td>varchar(7)</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">7</td>
+			<td>表示順&#32;/Thứ&#32;tự&#32;hiển&#32;thị</td>
+			<td>idx</td>
+			<td>int&#32;unsigned</td>
+			<td>Yes</td>
+			<td>0</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">8</td>
+			<td>価格表示&#32;/Có&#32;hiển&#32;thị&#32;giá&#32;hay&#32;không</td>
+			<td>display_price</td>
+			<td>tinyint(1)</td>
+			<td>Yes</td>
+			<td>1</td>
+			<td>0.Không,&#32;1.Có</td>
+		</tr>
+		<tr>
+			<td class="number-format">9</td>
+			<td>食事提供曜日/Các&#32;thứ&#32;ngày&#32;cung&#32;cấp&#32;bữa&#32;ăn&#32;trong&#32;tuần</td>
+			<td>meal_service_days</td>
+			<td>json</td>
+			<td>Yes</td>
+			<td></td>
+			<td>0-6=CN～T7,&#32;7=Ngày&#32;lễ</td>
+		</tr>
+		<tr>
+			<td class="number-format">10</td>
+			<td>欠食可能曜日/Các&#32;thứ&#32;ngày&#32;cho&#32;phép&#32;hủy&#32;bữa&#32;ăn&#32;trong&#32;tuần</td>
+			<td>meal_can_be_skip_days</td>
+			<td>json</td>
+			<td></td>
+			<td></td>
+			<td>0-6=CN～T7,&#32;7=Ngày&#32;lễ</td>
+		</tr>
+		<tr>
+			<td class="number-format">11</td>
+			<td>注文締切前日数/Số&#32;ngày&#32;cho&#32;phép&#32;hủy&#32;trước&#32;ngày&#32;ăn</td>
+			<td>days_before_order_deadline</td>
+			<td>int&#32;unsigned</td>
+			<td>Yes</td>
+			<td>0</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">12</td>
+			<td>注文締切時間/Giờ&#32;cho&#32;phép&#32;hủy</td>
+			<td>order_cutoff_time</td>
+			<td>time</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">13</td>
+			<td></td>
+			<td>created_at</td>
+			<td>timestamp</td>
+			<td></td>
+			<td>null</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">14</td>
+			<td></td>
+			<td>updated_at</td>
+			<td>timestamp</td>
+			<td></td>
+			<td>null</td>
+			<td></td>
+		</tr>
+	</table>
+
+<br>
+	<table>
+		<caption>インデックス情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="170">
+				<col width="170">
+				<col width="70">
+				<col width="470">
+			</colgroup>
+		<tr>
+			<th>No.</th>
+			<th>インデックス名</th>
+			<th>カラムリスト</th>
+			<th>ユニーク</th>
+			<th>オプション</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>PRIMARY</td>
+			<td>id</td>
+			<td>Yes</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>menus_client_id_foreign</td>
+			<td>client_id</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+
+<br>
+	<table>
+		<caption>制約情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="170">
+				<col width="170">
+				<col width="540">
+			</colgroup>
+		<tr>
+			<th>No.</th>
+			<th>制約名</th>
+			<th>種類</th>
+			<th>制約定義</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>PRIMARY</td>
+			<td>PRIMARY&#32;KEY</td>
+			<td>id</td>
+		</tr>
+	</table>
+
+<br>
+	<table>
+		<caption>外部キー情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="170">
+				<col width="170">
+				<col width="170">
+				<col width="170">
+				<col width="100">
+				<col width="100">
+			</colgroup>
+			<th>No.</th>
+			<th>外部キー名</th>
+			<th>カラムリスト</th>
+			<th>参照先</th>
+			<th>参照先カラムリスト</th>
+			<th>ON DELETE</th>
+			<th>ON UPDATE</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>maimiru.menus_client_id_foreign</td>
+			<td>client_id</td>
+			<td><a href="maimiru.clients.html">maimiru.clients</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+	</table>
+
+<br>
+	<table>
+		<caption>外部キー情報(PK側)</caption>
+			<colgroup>
+				<col width="30">
+				<col width="170">
+				<col width="170">
+				<col width="170">
+				<col width="170">
+				<col width="100">
+				<col width="100">
+			</colgroup>
+		<tr>
+			<th>No.</th>
+			<th>外部キー名</th>
+			<th>カラムリスト</th>
+			<th>参照元</th>
+			<th>参照元カラムリスト</th>
+			<th>ON DELETE</th>
+			<th>ON UPDATE</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>maimiru.department_menus_menu_id_foreign</td>
+			<td>id</td>
+			<td><a href="maimiru.department_menus.html">maimiru.department_menus</td>
+			<td>menu_id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>maimiru.menu_changed_histories_menu_id_foreign</td>
+			<td>id</td>
+			<td><a href="maimiru.menu_changed_histories.html">maimiru.menu_changed_histories</td>
+			<td>menu_id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+	</table>
+
+
+	</body>
+</html>
