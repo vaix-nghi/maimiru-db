@@ -2,7 +2,7 @@
 <html lang="ja">
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-		<title>テーブル定義書&#32;マイみーる　食数管理システム&#32;Phase1</title>
+		<title>テーブル定義書&#32;マイみーる　食事予約システム&#32;Phase1</title>
 		<link rel="stylesheet" href="a5m2.css">
 	</head>
 	<body>
@@ -29,15 +29,15 @@
 				<col width="305">
 			</colgroup>
 			<th>システム名</th>
-			<td>マイみーる　食数管理システム</td>
+			<td>マイみーる　食事予約システム</td>
 			<th>作成者</th>
-			<td>Le&#32;Thanh&#32;Nghi</td>
+			<td>bnghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/12/14</td>
+			<td>2025/01/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -89,6 +89,24 @@
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
+			<td>部署ID/ID&#32;phòng&#32;ban</td>
+			<td>department_id</td>
+			<td>bigint&#32;unsigned</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">4</td>
+			<td>利用者ID/ID&#32;người&#32;dùng</td>
+			<td>service_user_id</td>
+			<td>bigint&#32;unsigned</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">5</td>
 			<td>請求書番号/Số&#32;hóa&#32;đơn</td>
 			<td>invoice_number</td>
 			<td>varchar(50)</td>
@@ -97,7 +115,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">4</td>
+			<td class="number-format">6</td>
 			<td>請求書名/Tên&#32;hóa&#32;đơn</td>
 			<td>invoice_name</td>
 			<td>varchar(50)</td>
@@ -106,7 +124,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">5</td>
+			<td class="number-format">7</td>
 			<td>請求先　会社名/Tên&#32;công&#32;ty&#32;nhận&#32;yêu&#32;cầu&#32;thanh&#32;toán</td>
 			<td>billing_company_name</td>
 			<td>varchar(255)</td>
@@ -115,7 +133,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">6</td>
+			<td class="number-format">8</td>
 			<td>請求先　部署/Bộ&#32;phận/phòng&#32;ban</td>
 			<td>billing_department</td>
 			<td>varchar(255)</td>
@@ -124,7 +142,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">7</td>
+			<td class="number-format">9</td>
 			<td>請求先　担当者/Tên&#32;người&#32;phụ&#32;trách</td>
 			<td>billing_manager_name</td>
 			<td>varchar(255)</td>
@@ -133,7 +151,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">8</td>
+			<td class="number-format">10</td>
 			<td>請求日/Ngày&#32;tạo&#32;yêu&#32;cầu</td>
 			<td>billing_dt</td>
 			<td>date</td>
@@ -142,7 +160,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">9</td>
+			<td class="number-format">11</td>
 			<td>入金期限日/Hạn&#32;nộp&#32;tiền</td>
 			<td>limit_dt</td>
 			<td>date</td>
@@ -151,7 +169,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">10</td>
+			<td class="number-format">12</td>
 			<td>自社名/Tên&#32;công&#32;ty&#32;phát&#32;hành&#32;phiếu&#32;yêu&#32;cầu&#32;thanh&#32;toán</td>
 			<td>own_company_name</td>
 			<td>varchar(255)</td>
@@ -160,7 +178,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">11</td>
+			<td class="number-format">13</td>
 			<td>自社郵便番号/Mã&#32;bưu&#32;điện</td>
 			<td>own_zipcode</td>
 			<td>varchar(8)</td>
@@ -169,7 +187,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">12</td>
+			<td class="number-format">14</td>
 			<td>自社住所/Địa&#32;chỉ</td>
 			<td>own_address</td>
 			<td>varchar(255)</td>
@@ -178,7 +196,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">13</td>
+			<td class="number-format">15</td>
 			<td>自社電話番号/Số&#32;điện&#32;thoại</td>
 			<td>own_phone</td>
 			<td>varchar(13)</td>
@@ -187,7 +205,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">14</td>
+			<td class="number-format">16</td>
 			<td>自社FAX番号/Fax</td>
 			<td>own_fax</td>
 			<td>varchar(13)</td>
@@ -196,7 +214,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">15</td>
+			<td class="number-format">17</td>
 			<td>自社事業者登録番号/Số&#32;đăng&#32;ký&#32;invoice</td>
 			<td>own_invoice_registerd_number</td>
 			<td>varchar(15)</td>
@@ -205,7 +223,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">16</td>
+			<td class="number-format">18</td>
 			<td>自社口座/Thông&#32;tin&#32;ngân&#32;hàng</td>
 			<td>own_bank_account</td>
 			<td>varchar(50)</td>
@@ -214,7 +232,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">17</td>
+			<td class="number-format">19</td>
 			<td>伝達事項/Message</td>
 			<td>invoice_paper_note</td>
 			<td>text</td>
@@ -223,7 +241,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">18</td>
+			<td class="number-format">20</td>
 			<td>社内メモ/Ghi&#32;chú&#32;nội&#32;bộ</td>
 			<td>private_note</td>
 			<td>text</td>
@@ -232,7 +250,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">19</td>
+			<td class="number-format">21</td>
 			<td>小計金額/Tổng&#32;tiền&#32;trước&#32;thuế</td>
 			<td>subtotal_amount</td>
 			<td>bigint&#32;unsigned</td>
@@ -241,7 +259,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">20</td>
+			<td class="number-format">22</td>
 			<td>消費税率/Tỷ&#32;suất&#32;thuế</td>
 			<td>sales_tax_percent</td>
 			<td>bigint&#32;unsigned</td>
@@ -250,7 +268,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">21</td>
+			<td class="number-format">23</td>
 			<td>消費税/Tổng&#32;thuế</td>
 			<td>sales_tax</td>
 			<td>bigint&#32;unsigned</td>
@@ -259,7 +277,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">22</td>
+			<td class="number-format">24</td>
 			<td>合計金額/Tổng&#32;số&#32;tiền</td>
 			<td>total_amount</td>
 			<td>bigint&#32;unsigned</td>
@@ -268,7 +286,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">23</td>
+			<td class="number-format">25</td>
 			<td>請求書PDF&#32;ファイルパス/Path&#32;file&#32;PDF</td>
 			<td>pdf_file_path</td>
 			<td>varchar(255)</td>
@@ -277,7 +295,16 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">24</td>
+			<td class="number-format">26</td>
+			<td>処理状態/Trạng&#32;thái&#32;xử&#32;lý</td>
+			<td>processing_status</td>
+			<td>tinyint</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">27</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -286,7 +313,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">25</td>
+			<td class="number-format">28</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>

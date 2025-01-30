@@ -2,7 +2,7 @@
 <html lang="ja">
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-		<title>テーブル定義書&#32;マイみーる　食数管理システム&#32;Phase1</title>
+		<title>テーブル定義書&#32;マイみーる　食事予約システム&#32;Phase1</title>
 		<link rel="stylesheet" href="a5m2.css">
 	</head>
 	<body>
@@ -29,15 +29,15 @@
 				<col width="305">
 			</colgroup>
 			<th>システム名</th>
-			<td>マイみーる　食数管理システム</td>
+			<td>マイみーる　食事予約システム</td>
 			<th>作成者</th>
-			<td>Le&#32;Thanh&#32;Nghi</td>
+			<td>bnghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/12/14</td>
+			<td>2025/01/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -98,6 +98,15 @@
 		</tr>
 		<tr>
 			<td class="number-format">4</td>
+			<td>合計金額/Tổng&#32;giá</td>
+			<td>total_price</td>
+			<td>varchar(255)</td>
+			<td></td>
+			<td>'0'</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">5</td>
 			<td>適用日/Ngày&#32;bắt&#32;đầu&#32;áp&#32;dụng</td>
 			<td>apply_date</td>
 			<td>date</td>
@@ -106,7 +115,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">5</td>
+			<td class="number-format">6</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -115,7 +124,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">6</td>
+			<td class="number-format">7</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
@@ -200,15 +209,6 @@
 			<th>参照先カラムリスト</th>
 			<th>ON DELETE</th>
 			<th>ON UPDATE</th>
-		</tr>
-		<tr>
-			<td class="number-format">1</td>
-			<td>menu_changed_histories_menu_id_foreign</td>
-			<td>menu_id</td>
-			<td><a href="menus.html">menus</td>
-			<td>id</td>
-			<td>CASCADE</td>
-			<td>NO&#32;ACTION</td>
 		</tr>
 	</table>
 

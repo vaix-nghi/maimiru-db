@@ -2,7 +2,7 @@
 <html lang="ja">
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-		<title>テーブル定義書&#32;マイみーる　食数管理システム&#32;Phase1</title>
+		<title>テーブル定義書&#32;マイみーる　食事予約システム&#32;Phase1</title>
 		<link rel="stylesheet" href="a5m2.css">
 	</head>
 	<body>
@@ -29,15 +29,15 @@
 				<col width="305">
 			</colgroup>
 			<th>システム名</th>
-			<td>マイみーる　食数管理システム</td>
+			<td>マイみーる　食事予約システム</td>
 			<th>作成者</th>
-			<td>Le&#32;Thanh&#32;Nghi</td>
+			<td>bnghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/12/14</td>
+			<td>2025/01/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -91,7 +91,7 @@
 			<td class="number-format">3</td>
 			<td>事業所コード/Code</td>
 			<td>code</td>
-			<td>varchar(12)</td>
+			<td>varchar(255)</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
@@ -100,7 +100,7 @@
 			<td class="number-format">4</td>
 			<td>事業所名/Tên&#32;công&#32;ty&#32;thực&#32;phẩm</td>
 			<td>name</td>
-			<td>varchar(128)</td>
+			<td>varchar(255)</td>
 			<td>Yes</td>
 			<td></td>
 			<td></td>
@@ -109,7 +109,7 @@
 			<td class="number-format">5</td>
 			<td>事業所名（略称）/Tên&#32;viết&#32;tắt</td>
 			<td>short_name</td>
-			<td>varchar(30)</td>
+			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -118,7 +118,7 @@
 			<td class="number-format">6</td>
 			<td>郵便番号/Mã&#32;bưu&#32;điện</td>
 			<td>postcode</td>
-			<td>varchar(8)</td>
+			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -127,7 +127,7 @@
 			<td class="number-format">7</td>
 			<td>都道府県/Tỉnh</td>
 			<td>prefecture</td>
-			<td>varchar(7)</td>
+			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -136,7 +136,7 @@
 			<td class="number-format">8</td>
 			<td>住所1/Địa&#32;chỉ&#32;1</td>
 			<td>address1</td>
-			<td>varchar(155)</td>
+			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -145,7 +145,7 @@
 			<td class="number-format">9</td>
 			<td>住所2/Địa&#32;chỉ&#32;2</td>
 			<td>address2</td>
-			<td>varchar(155)</td>
+			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -154,7 +154,7 @@
 			<td class="number-format">10</td>
 			<td>住所3/Địa&#32;chỉ&#32;3</td>
 			<td>address3</td>
-			<td>varchar(155)</td>
+			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -163,7 +163,7 @@
 			<td class="number-format">11</td>
 			<td>電話番号/Điện&#32;thoại</td>
 			<td>tel</td>
-			<td>varchar(15)</td>
+			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -172,7 +172,7 @@
 			<td class="number-format">12</td>
 			<td>FAX/fax</td>
 			<td>fax</td>
-			<td>varchar(15)</td>
+			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -191,7 +191,7 @@
 			<td>集金方法/Phương&#32;thức&#32;thu&#32;tiền</td>
 			<td>money_collection_method</td>
 			<td>tinyint&#32;unsigned</td>
-			<td>Yes</td>
+			<td></td>
 			<td></td>
 			<td>1.&#32;振替,2.&#32;振込</td>
 		</tr>
@@ -253,7 +253,7 @@
 			<td class="number-format">21</td>
 			<td>登録番号（インボイス）/Số&#32;đăng&#32;ký&#32;invoice</td>
 			<td>invoice_number</td>
-			<td>varchar(15)</td>
+			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -269,24 +269,33 @@
 		</tr>
 		<tr>
 			<td class="number-format">23</td>
-			<td>銀行名/Tên&#32;ngân&#32;hàng</td>
-			<td>billing_bank_account</td>
-			<td>varchar(50)</td>
-			<td></td>
-			<td></td>
+			<td>支払い請求アドレスは基本情報と同じですか？/Địa&#32;chỉ&#32;yêu&#32;cầu&#32;thanh&#32;toán&#32;có&#32;giống&#32;mặc&#32;định&#32;không?</td>
+			<td>billing_address_checked</td>
+			<td>tinyint&#32;unsigned</td>
+			<td>Yes</td>
+			<td>1</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">24</td>
-			<td>支店名/Chi&#32;nhánh</td>
-			<td>billing_bank_branch</td>
-			<td>varchar(50)</td>
+			<td>銀行名/Tên&#32;ngân&#32;hàng</td>
+			<td>billing_bank_account</td>
+			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">25</td>
+			<td>支店名/Chi&#32;nhánh</td>
+			<td>billing_bank_branch</td>
+			<td>varchar(255)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">26</td>
 			<td>口座種別/Loại&#32;tài&#32;khoản</td>
 			<td>billing_bank_type</td>
 			<td>tinyint&#32;unsigned</td>
@@ -295,25 +304,25 @@
 			<td>1.普通,&#32;2.当座</td>
 		</tr>
 		<tr>
-			<td class="number-format">26</td>
+			<td class="number-format">27</td>
 			<td>口座番号/Số&#32;toàn&#32;khoản</td>
 			<td>billing_bank_number</td>
-			<td>varchar(20)</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">27</td>
-			<td>口座名義/Tên&#32;tài&#32;khoản</td>
-			<td>billing_bank_name</td>
-			<td>varchar(50)</td>
+			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">28</td>
+			<td>口座名義/Tên&#32;tài&#32;khoản</td>
+			<td>billing_bank_name</td>
+			<td>varchar(255)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">29</td>
 			<td>請求書備考/Ghi&#32;chú&#32;cho&#32;yêu&#32;cầu&#32;thanh&#32;toán</td>
 			<td>billing_note</td>
 			<td>text</td>
@@ -322,7 +331,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">29</td>
+			<td class="number-format">30</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -331,7 +340,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">30</td>
+			<td class="number-format">31</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
@@ -432,9 +441,81 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td>clients_service_provider_id_foreign</td>
-			<td>service_provider_id</td>
-			<td><a href="service_providers.html">service_providers</td>
+			<td>client_admins_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>client_settings_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">3</td>
+			<td>departments_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">4</td>
+			<td>menu_price_categories_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">5</td>
+			<td>menus_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">6</td>
+			<td>order_for_calendars_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">7</td>
+			<td>order_for_users_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">8</td>
+			<td>service_users_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">9</td>
+			<td>tmp_orders_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="clients.html">clients</td>
 			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
@@ -466,8 +547,8 @@
 			<td class="number-format">1</td>
 			<td>client_admins_client_id_foreign</td>
 			<td>id</td>
-			<td><a href="client_admins.html">client_admins</td>
-			<td>client_id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>
@@ -475,8 +556,8 @@
 			<td class="number-format">2</td>
 			<td>client_settings_client_id_foreign</td>
 			<td>id</td>
-			<td><a href="client_settings.html">client_settings</td>
-			<td>client_id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>
@@ -484,8 +565,8 @@
 			<td class="number-format">3</td>
 			<td>departments_client_id_foreign</td>
 			<td>id</td>
-			<td><a href="departments.html">departments</td>
-			<td>client_id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>
@@ -493,8 +574,8 @@
 			<td class="number-format">4</td>
 			<td>menu_price_categories_client_id_foreign</td>
 			<td>id</td>
-			<td><a href="menu_price_categories.html">menu_price_categories</td>
-			<td>client_id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>
@@ -502,26 +583,44 @@
 			<td class="number-format">5</td>
 			<td>menus_client_id_foreign</td>
 			<td>id</td>
-			<td><a href="menus.html">menus</td>
-			<td>client_id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>
 		<tr>
 			<td class="number-format">6</td>
-			<td>service_users_client_id_foreign</td>
+			<td>order_for_calendars_client_id_foreign</td>
 			<td>id</td>
-			<td><a href="service_users.html">service_users</td>
-			<td>client_id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>
 		<tr>
 			<td class="number-format">7</td>
+			<td>order_for_users_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">8</td>
+			<td>service_users_client_id_foreign</td>
+			<td>id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">9</td>
 			<td>tmp_orders_client_id_foreign</td>
 			<td>id</td>
-			<td><a href="tmp_orders.html">tmp_orders</td>
-			<td>client_id</td>
+			<td><a href="clients.html">clients</td>
+			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>

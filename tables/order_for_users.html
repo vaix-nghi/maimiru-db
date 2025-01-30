@@ -2,7 +2,7 @@
 <html lang="ja">
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-		<title>テーブル定義書&#32;マイみーる　食数管理システム&#32;Phase1</title>
+		<title>テーブル定義書&#32;マイみーる　食事予約システム&#32;Phase1</title>
 		<link rel="stylesheet" href="a5m2.css">
 	</head>
 	<body>
@@ -29,15 +29,15 @@
 				<col width="305">
 			</colgroup>
 			<th>システム名</th>
-			<td>マイみーる　食数管理システム</td>
+			<td>マイみーる　食事予約システム</td>
 			<th>作成者</th>
-			<td>Le&#32;Thanh&#32;Nghi</td>
+			<td>bnghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/12/14</td>
+			<td>2025/01/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -89,6 +89,15 @@
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
+			<td></td>
+			<td>department_id</td>
+			<td>bigint&#32;unsigned</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">4</td>
 			<td>利用者ID/ID&#32;người&#32;dùng</td>
 			<td>service_user_id</td>
 			<td>bigint&#32;unsigned</td>
@@ -97,25 +106,43 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">4</td>
-			<td>喫食月/Tháng&#32;ăn</td>
-			<td>eat_month</td>
-			<td>date</td>
-			<td>Yes</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
 			<td class="number-format">5</td>
-			<td>詳細データ/Dữ&#32;liệu&#32;chi&#32;tiết</td>
-			<td>detail</td>
-			<td>json</td>
-			<td>Yes</td>
+			<td>メニューID/ID&#32;Menu</td>
+			<td>menu_id</td>
+			<td>bigint&#32;unsigned</td>
+			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">6</td>
+			<td>喫食日/Ngày&#32;ăn</td>
+			<td>eat_date</td>
+			<td>date</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">7</td>
+			<td></td>
+			<td>type</td>
+			<td>tinyint&#32;unsigned</td>
+			<td>Yes</td>
+			<td>0</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">8</td>
+			<td></td>
+			<td>status</td>
+			<td>tinyint&#32;unsigned</td>
+			<td>Yes</td>
+			<td>1</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">9</td>
 			<td>金額/Tổng&#32;số&#32;tiền</td>
 			<td>total_amount</td>
 			<td>decimal(10,2)</td>
@@ -124,7 +151,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">7</td>
+			<td class="number-format">10</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -133,12 +160,30 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">8</td>
+			<td class="number-format">11</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
 			<td></td>
 			<td>null</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">12</td>
+			<td></td>
+			<td>payment_confirm_status</td>
+			<td>tinyint&#32;unsigned</td>
+			<td>Yes</td>
+			<td>0</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">13</td>
+			<td></td>
+			<td>payment_confirm_id</td>
+			<td>bigint&#32;unsigned</td>
+			<td></td>
+			<td></td>
 			<td></td>
 		</tr>
 	</table>
@@ -165,6 +210,48 @@
 			<td>PRIMARY</td>
 			<td>id</td>
 			<td>Yes</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>order_for_users_client_id_index</td>
+			<td>client_id</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">3</td>
+			<td>order_for_users_service_user_id_index</td>
+			<td>service_user_id</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">4</td>
+			<td>order_for_users_department_id_index</td>
+			<td>department_id</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">5</td>
+			<td>order_for_users_menu_id_index</td>
+			<td>menu_id</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">6</td>
+			<td>order_for_users_eat_date_index</td>
+			<td>eat_date</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">7</td>
+			<td>order_for_users_status_index</td>
+			<td>status</td>
+			<td></td>
 			<td></td>
 		</tr>
 	</table>

@@ -2,7 +2,7 @@
 <html lang="ja">
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-		<title>テーブル定義書&#32;マイみーる　食数管理システム&#32;Phase1</title>
+		<title>テーブル定義書&#32;マイみーる　食事予約システム&#32;Phase1</title>
 		<link rel="stylesheet" href="a5m2.css">
 	</head>
 	<body>
@@ -29,15 +29,15 @@
 				<col width="305">
 			</colgroup>
 			<th>システム名</th>
-			<td>マイみーる　食数管理システム</td>
+			<td>マイみーる　食事予約システム</td>
 			<th>作成者</th>
-			<td>Le&#32;Thanh&#32;Nghi</td>
+			<td>bnghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/12/14</td>
+			<td>2025/01/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -219,9 +219,9 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td>departments_client_id_foreign</td>
-			<td>client_id</td>
-			<td><a href="clients.html">clients</td>
+			<td>department_menus_department_id_foreign</td>
+			<td>id</td>
+			<td><a href="departments.html">departments</td>
 			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
@@ -229,10 +229,37 @@
 		<tr>
 			<td class="number-format">2</td>
 			<td>departments_parent_department_id_foreign</td>
-			<td>parent_department_id</td>
+			<td>id</td>
 			<td><a href="departments.html">departments</td>
 			<td>id</td>
 			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">3</td>
+			<td>order_for_calendars_department_id_foreign</td>
+			<td>id</td>
+			<td><a href="departments.html">departments</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">4</td>
+			<td>order_for_users_department_id_foreign</td>
+			<td>id</td>
+			<td><a href="departments.html">departments</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">5</td>
+			<td>service_users_department_id_foreign</td>
+			<td>id</td>
+			<td><a href="departments.html">departments</td>
+			<td>id</td>
+			<td>SET&#32;NULL</td>
 			<td>NO&#32;ACTION</td>
 		</tr>
 	</table>
@@ -262,8 +289,8 @@
 			<td class="number-format">1</td>
 			<td>department_menus_department_id_foreign</td>
 			<td>id</td>
-			<td><a href="department_menus.html">department_menus</td>
-			<td>department_id</td>
+			<td><a href="departments.html">departments</td>
+			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>
@@ -272,16 +299,34 @@
 			<td>departments_parent_department_id_foreign</td>
 			<td>id</td>
 			<td><a href="departments.html">departments</td>
-			<td>parent_department_id</td>
+			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
+			<td>order_for_calendars_department_id_foreign</td>
+			<td>id</td>
+			<td><a href="departments.html">departments</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">4</td>
+			<td>order_for_users_department_id_foreign</td>
+			<td>id</td>
+			<td><a href="departments.html">departments</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">5</td>
 			<td>service_users_department_id_foreign</td>
 			<td>id</td>
-			<td><a href="service_users.html">service_users</td>
-			<td>department_id</td>
+			<td><a href="departments.html">departments</td>
+			<td>id</td>
 			<td>SET&#32;NULL</td>
 			<td>NO&#32;ACTION</td>
 		</tr>

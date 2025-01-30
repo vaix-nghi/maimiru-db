@@ -2,7 +2,7 @@
 <html lang="ja">
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-		<title>テーブル定義書&#32;マイみーる　食数管理システム&#32;Phase1</title>
+		<title>テーブル定義書&#32;マイみーる　食事予約システム&#32;Phase1</title>
 		<link rel="stylesheet" href="a5m2.css">
 	</head>
 	<body>
@@ -29,15 +29,15 @@
 				<col width="305">
 			</colgroup>
 			<th>システム名</th>
-			<td>マイみーる　食数管理システム</td>
+			<td>マイみーる　食事予約システム</td>
 			<th>作成者</th>
-			<td>Le&#32;Thanh&#32;Nghi</td>
+			<td>bnghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/12/14</td>
+			<td>2025/01/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -164,7 +164,7 @@
 			<td>注文締切前日数/Số&#32;ngày&#32;cho&#32;phép&#32;hủy&#32;trước&#32;ngày&#32;ăn</td>
 			<td>days_before_order_deadline</td>
 			<td>int&#32;unsigned</td>
-			<td>Yes</td>
+			<td></td>
 			<td>0</td>
 			<td></td>
 		</tr>
@@ -173,7 +173,7 @@
 			<td>注文締切時間/Giờ&#32;cho&#32;phép&#32;hủy</td>
 			<td>order_cutoff_time</td>
 			<td>time</td>
-			<td>Yes</td>
+			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
@@ -275,9 +275,36 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td>menus_client_id_foreign</td>
-			<td>client_id</td>
-			<td><a href="clients.html">clients</td>
+			<td>department_menus_menu_id_foreign</td>
+			<td>id</td>
+			<td><a href="menus.html">menus</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>menu_changed_histories_menu_id_foreign</td>
+			<td>id</td>
+			<td><a href="menus.html">menus</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">3</td>
+			<td>order_for_users_menu_id_foreign</td>
+			<td>id</td>
+			<td><a href="menus.html">menus</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">4</td>
+			<td>order_menu_for_calendars_menu_id_foreign</td>
+			<td>id</td>
+			<td><a href="menus.html">menus</td>
 			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
@@ -309,8 +336,8 @@
 			<td class="number-format">1</td>
 			<td>department_menus_menu_id_foreign</td>
 			<td>id</td>
-			<td><a href="department_menus.html">department_menus</td>
-			<td>menu_id</td>
+			<td><a href="menus.html">menus</td>
+			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>
@@ -318,8 +345,26 @@
 			<td class="number-format">2</td>
 			<td>menu_changed_histories_menu_id_foreign</td>
 			<td>id</td>
-			<td><a href="menu_changed_histories.html">menu_changed_histories</td>
-			<td>menu_id</td>
+			<td><a href="menus.html">menus</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">3</td>
+			<td>order_for_users_menu_id_foreign</td>
+			<td>id</td>
+			<td><a href="menus.html">menus</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">4</td>
+			<td>order_menu_for_calendars_menu_id_foreign</td>
+			<td>id</td>
+			<td><a href="menus.html">menus</td>
+			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>

@@ -2,7 +2,7 @@
 <html lang="ja">
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-		<title>テーブル定義書&#32;マイみーる　食数管理システム&#32;Phase1</title>
+		<title>テーブル定義書&#32;マイみーる　食事予約システム&#32;Phase1</title>
 		<link rel="stylesheet" href="a5m2.css">
 	</head>
 	<body>
@@ -29,15 +29,15 @@
 				<col width="305">
 			</colgroup>
 			<th>システム名</th>
-			<td>マイみーる　食数管理システム</td>
+			<td>マイみーる　食事予約システム</td>
 			<th>作成者</th>
-			<td>Le&#32;Thanh&#32;Nghi</td>
+			<td>bnghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/12/14</td>
+			<td>2025/01/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -203,9 +203,9 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td>tmp_orders_client_id_foreign</td>
-			<td>client_id</td>
-			<td><a href="clients.html">clients</td>
+			<td>tmp_order_details_tmp_order_id_foreign</td>
+			<td>id</td>
+			<td><a href="tmp_orders.html">tmp_orders</td>
 			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
@@ -237,8 +237,8 @@
 			<td class="number-format">1</td>
 			<td>tmp_order_details_tmp_order_id_foreign</td>
 			<td>id</td>
-			<td><a href="tmp_order_details.html">tmp_order_details</td>
-			<td>tmp_order_id</td>
+			<td><a href="tmp_orders.html">tmp_orders</td>
+			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>

@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th>途中入寮・退寮申請管理/Đăng ký vào/ra ký túc</th>
-			<td>entry_exit_applications</td>
+			<th>債務者情報/Phụ huynh/người giám hộ</th>
+			<td>debtors</td>
 			</tr>
 		</table>
 	</div>
@@ -80,16 +80,7 @@
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td>事業所ID/ID&#32;trường&#32;học/doanh&#32;nghiệp</td>
-			<td>client_id</td>
-			<td>bigint&#32;unsigned</td>
-			<td>Yes</td>
 			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">3</td>
-			<td>利用者ID/ID&#32;người&#32;dùng</td>
 			<td>service_user_id</td>
 			<td>bigint&#32;unsigned</td>
 			<td>Yes</td>
@@ -97,67 +88,76 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">4</td>
-			<td>移動区分/Loại&#32;vào&#32;ra</td>
-			<td>entry_exit_category</td>
-			<td>tinyint</td>
+			<td class="number-format">3</td>
+			<td></td>
+			<td>user_id</td>
+			<td>bigint&#32;unsigned</td>
 			<td>Yes</td>
 			<td></td>
-			<td>&#32;1.Ra&#32;trường,&#32;2.Nghỉ&#32;học,&#32;3.Chưa&#32;thanh&#32;toán</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">4</td>
+			<td>債務者名/Tên&#32;phụ&#32;huynh</td>
+			<td>name</td>
+			<td>varchar(255)</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">5</td>
-			<td>移動日/Ngày&#32;vào&#32;ra</td>
-			<td>entry_exit_date</td>
-			<td>date</td>
-			<td>Yes</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">6</td>
-			<td>移動タイミング/Thời&#32;điểm&#32;bắt&#32;đầu&#32;vào&#32;ra</td>
-			<td>entry_exit_timing</td>
-			<td>time</td>
-			<td>Yes</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">7</td>
-			<td>特記事項/Ghi&#32;chú</td>
-			<td>notes</td>
-			<td>text</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">8</td>
-			<td>移動時間/Thời&#32;gian&#32;vào&#32;ra</td>
-			<td>entry_exit_time</td>
-			<td>tinyint</td>
-			<td></td>
-			<td></td>
-			<td>&#32;1.午前,&#32;2.午後</td>
-		</tr>
-		<tr>
-			<td class="number-format">9</td>
-			<td>変更事項/Thay&#32;đổi</td>
-			<td>change_matters</td>
+			<td>債務者名カナ/Tên&#32;kana</td>
+			<td>name_kana</td>
 			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">10</td>
-			<td>承認状態/Trạng&#32;thái&#32;xử&#32;lý</td>
-			<td>status</td>
+			<td class="number-format">6</td>
+			<td>住所/Địa&#32;chỉ</td>
+			<td>address</td>
+			<td>text</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">7</td>
+			<td>電話番号/Điện&#32;thoại</td>
+			<td>tel</td>
+			<td>varchar(15)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">8</td>
+			<td></td>
+			<td>post_code</td>
+			<td>varchar(255)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">9</td>
+			<td>利用者との関係/Quan&#32;hệ&#32;với&#32;người&#32;dùng</td>
+			<td>relationship_with_user</td>
 			<td>tinyint</td>
-			<td>Yes</td>
-			<td>1</td>
-			<td>&#32;1.Đang&#32;chờ,&#32;2.Đã&#32;xác&#32;nhận,&#32;9.Cancel</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">10</td>
+			<td>同意チェック日時/Ngày&#32;check&#32;vào&#32;đồng&#32;ý</td>
+			<td>agreement_checked_date</td>
+			<td>datetime</td>
+			<td></td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td class="number-format">11</td>
@@ -201,6 +201,20 @@
 			<td>PRIMARY</td>
 			<td>id</td>
 			<td>Yes</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>debtors_service_user_id_foreign</td>
+			<td>service_user_id</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">3</td>
+			<td>debtors_user_id_foreign</td>
+			<td>user_id</td>
+			<td></td>
 			<td></td>
 		</tr>
 	</table>

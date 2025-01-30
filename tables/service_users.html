@@ -2,7 +2,7 @@
 <html lang="ja">
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-		<title>テーブル定義書&#32;マイみーる　食数管理システム&#32;Phase1</title>
+		<title>テーブル定義書&#32;マイみーる　食事予約システム&#32;Phase1</title>
 		<link rel="stylesheet" href="a5m2.css">
 	</head>
 	<body>
@@ -29,15 +29,15 @@
 				<col width="305">
 			</colgroup>
 			<th>システム名</th>
-			<td>マイみーる　食数管理システム</td>
+			<td>マイみーる　食事予約システム</td>
 			<th>作成者</th>
-			<td>Le&#32;Thanh&#32;Nghi</td>
+			<td>bnghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/12/14</td>
+			<td>2025/01/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -152,6 +152,15 @@
 		</tr>
 		<tr>
 			<td class="number-format">10</td>
+			<td>電話番号/Số&#32;điện&#32;thoại</td>
+			<td>tel</td>
+			<td>varchar(255)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">11</td>
 			<td>ICｶｰﾄﾞA&#32;/ID&#32;của&#32;IC&#32;card</td>
 			<td>ic_card_id</td>
 			<td>varchar(50)</td>
@@ -160,7 +169,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">11</td>
+			<td class="number-format">12</td>
 			<td>ICｶｰﾄﾞ情報/Thông&#32;tin&#32;của&#32;IC&#32;card</td>
 			<td>ic_card_info</td>
 			<td>text</td>
@@ -169,7 +178,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">12</td>
+			<td class="number-format">13</td>
 			<td>備考/Ghi&#32;chú</td>
 			<td>notes</td>
 			<td>text</td>
@@ -178,7 +187,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">13</td>
+			<td class="number-format">14</td>
 			<td>システム利用料/Phí&#32;sử&#32;dụng&#32;hệ&#32;thống</td>
 			<td>system_use_fee</td>
 			<td>decimal(10,2)</td>
@@ -187,7 +196,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">14</td>
+			<td class="number-format">15</td>
 			<td>受注状態/Trạng&#32;thái&#32;được&#32;phép&#32;order</td>
 			<td>order_enabled_status</td>
 			<td>tinyint</td>
@@ -196,7 +205,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">15</td>
+			<td class="number-format">16</td>
 			<td>受注終了日/Ngày&#32;kết&#32;thúc&#32;order</td>
 			<td>order_finish_date</td>
 			<td>date</td>
@@ -205,7 +214,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">16</td>
+			<td class="number-format">17</td>
 			<td>利用状態/Trạng&#32;thái&#32;được&#32;phép&#32;sử&#32;dụng&#32;hệ&#32;thống</td>
 			<td>usable_status</td>
 			<td>tinyint</td>
@@ -214,7 +223,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">17</td>
+			<td class="number-format">18</td>
 			<td>利用終了日/Ngày&#32;kết&#32;thúc&#32;sử&#32;dụng</td>
 			<td>usable_finish_date</td>
 			<td>date</td>
@@ -223,7 +232,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">18</td>
+			<td class="number-format">19</td>
 			<td>利用終了理由/Lý&#32;do&#32;kết&#32;thúc&#32;sử&#32;dụng</td>
 			<td>usable_finish_reason</td>
 			<td>text</td>
@@ -232,7 +241,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">19</td>
+			<td class="number-format">20</td>
 			<td>アレルギー素材　複数可能　カンマ区切り/Các&#32;mục&#32;dị&#32;ứng,&#32;phân&#32;cách&#32;bởi&#32;dấu&#32;phẩy</td>
 			<td>allergy_items</td>
 			<td>varchar(255)</td>
@@ -241,7 +250,34 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">20</td>
+			<td class="number-format">21</td>
+			<td></td>
+			<td>are_there_any_allergies</td>
+			<td>tinyint</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">22</td>
+			<td>仮パスワード/Mật&#32;khẩu&#32;tạm&#32;thời</td>
+			<td>temp_pass</td>
+			<td>varchar(255)</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">23</td>
+			<td></td>
+			<td>is_generated_password</td>
+			<td>tinyint&#32;unsigned</td>
+			<td>Yes</td>
+			<td>1</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">24</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -250,7 +286,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">21</td>
+			<td class="number-format">25</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
@@ -286,15 +322,43 @@
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td>service_users_client_id_foreign</td>
+			<td>service_users_code_unique</td>
+			<td>code</td>
+			<td>制約</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">3</td>
+			<td>service_users_client_id_index</td>
 			<td>client_id</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">3</td>
-			<td>service_users_department_id_foreign</td>
+			<td class="number-format">4</td>
+			<td>service_users_department_id_index</td>
 			<td>department_id</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">5</td>
+			<td>service_users_code_index</td>
+			<td>code</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">6</td>
+			<td>service_users_name_index</td>
+			<td>name</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">7</td>
+			<td>service_users_usable_status_index</td>
+			<td>usable_status</td>
 			<td></td>
 			<td></td>
 		</tr>
@@ -321,6 +385,12 @@
 			<td>PRIMARY&#32;KEY</td>
 			<td>id</td>
 		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>service_users_code_unique</td>
+			<td>UNIQUE</td>
+			<td>code</td>
+		</tr>
 	</table>
 
 <br>
@@ -345,20 +415,20 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td>service_users_client_id_foreign</td>
-			<td>client_id</td>
-			<td><a href="clients.html">clients</td>
+			<td>debtors_service_user_id_foreign</td>
+			<td>id</td>
+			<td><a href="service_users.html">service_users</td>
 			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td>service_users_department_id_foreign</td>
-			<td>department_id</td>
-			<td><a href="departments.html">departments</td>
+			<td>order_for_users_service_user_id_foreign</td>
 			<td>id</td>
-			<td>SET&#32;NULL</td>
+			<td><a href="service_users.html">service_users</td>
+			<td>id</td>
+			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>
 	</table>
@@ -386,10 +456,19 @@
 		</tr>
 		<tr>
 			<td class="number-format">1</td>
-			<td>deptors_service_user_id_foreign</td>
+			<td>debtors_service_user_id_foreign</td>
 			<td>id</td>
-			<td><a href="deptors.html">deptors</td>
-			<td>service_user_id</td>
+			<td><a href="service_users.html">service_users</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>order_for_users_service_user_id_foreign</td>
+			<td>id</td>
+			<td><a href="service_users.html">service_users</td>
+			<td>id</td>
 			<td>CASCADE</td>
 			<td>NO&#32;ACTION</td>
 		</tr>

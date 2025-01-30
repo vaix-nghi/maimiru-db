@@ -13,8 +13,8 @@
 				<col width="300">
 			</colgroup>
 			<tr>
-			<th>途中入寮・退寮申請管理/Đăng ký vào/ra ký túc</th>
-			<td>entry_exit_applications</td>
+			<th></th>
+			<td>order_menu_for_calendars</td>
 			</tr>
 		</table>
 	</div>
@@ -80,8 +80,8 @@
 		</tr>
 		<tr>
 			<td class="number-format">2</td>
-			<td>事業所ID/ID&#32;trường&#32;học/doanh&#32;nghiệp</td>
-			<td>client_id</td>
+			<td></td>
+			<td>menu_id</td>
 			<td>bigint&#32;unsigned</td>
 			<td>Yes</td>
 			<td></td>
@@ -89,8 +89,8 @@
 		</tr>
 		<tr>
 			<td class="number-format">3</td>
-			<td>利用者ID/ID&#32;người&#32;dùng</td>
-			<td>service_user_id</td>
+			<td></td>
+			<td>order_for_calendar_id</td>
 			<td>bigint&#32;unsigned</td>
 			<td>Yes</td>
 			<td></td>
@@ -98,69 +98,60 @@
 		</tr>
 		<tr>
 			<td class="number-format">4</td>
-			<td>移動区分/Loại&#32;vào&#32;ra</td>
-			<td>entry_exit_category</td>
-			<td>tinyint</td>
-			<td>Yes</td>
 			<td></td>
-			<td>&#32;1.Ra&#32;trường,&#32;2.Nghỉ&#32;học,&#32;3.Chưa&#32;thanh&#32;toán</td>
-		</tr>
-		<tr>
-			<td class="number-format">5</td>
-			<td>移動日/Ngày&#32;vào&#32;ra</td>
-			<td>entry_exit_date</td>
-			<td>date</td>
-			<td>Yes</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">6</td>
-			<td>移動タイミング/Thời&#32;điểm&#32;bắt&#32;đầu&#32;vào&#32;ra</td>
-			<td>entry_exit_timing</td>
-			<td>time</td>
-			<td>Yes</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">7</td>
-			<td>特記事項/Ghi&#32;chú</td>
-			<td>notes</td>
-			<td>text</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td class="number-format">8</td>
-			<td>移動時間/Thời&#32;gian&#32;vào&#32;ra</td>
-			<td>entry_exit_time</td>
-			<td>tinyint</td>
-			<td></td>
-			<td></td>
-			<td>&#32;1.午前,&#32;2.午後</td>
-		</tr>
-		<tr>
-			<td class="number-format">9</td>
-			<td>変更事項/Thay&#32;đổi</td>
-			<td>change_matters</td>
+			<td>menu_name_for_display</td>
 			<td>varchar(255)</td>
 			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">10</td>
-			<td>承認状態/Trạng&#32;thái&#32;xử&#32;lý</td>
-			<td>status</td>
-			<td>tinyint</td>
+			<td class="number-format">5</td>
+			<td></td>
+			<td>menu_price</td>
+			<td>double</td>
 			<td>Yes</td>
-			<td>1</td>
-			<td>&#32;1.Đang&#32;chờ,&#32;2.Đã&#32;xác&#32;nhận,&#32;9.Cancel</td>
+			<td>0</td>
+			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">11</td>
+			<td class="number-format">6</td>
+			<td></td>
+			<td>user_count</td>
+			<td>int</td>
+			<td>Yes</td>
+			<td>0</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">7</td>
+			<td></td>
+			<td>user_count_allergy_items</td>
+			<td>int</td>
+			<td>Yes</td>
+			<td>0</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">8</td>
+			<td></td>
+			<td>type</td>
+			<td>varchar(255)</td>
+			<td>Yes</td>
+			<td>'1'</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">9</td>
+			<td></td>
+			<td>status</td>
+			<td>varchar(255)</td>
+			<td>Yes</td>
+			<td>'1'</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">10</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -169,7 +160,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">12</td>
+			<td class="number-format">11</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
@@ -201,6 +192,27 @@
 			<td>PRIMARY</td>
 			<td>id</td>
 			<td>Yes</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">2</td>
+			<td>order_menu_for_calendars_menu_id_index</td>
+			<td>menu_id</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">3</td>
+			<td>order_menu_for_calendars_order_for_calendar_id_index</td>
+			<td>order_for_calendar_id</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">4</td>
+			<td>order_menu_for_calendars_status_index</td>
+			<td>status</td>
+			<td></td>
 			<td></td>
 		</tr>
 	</table>

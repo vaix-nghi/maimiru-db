@@ -2,7 +2,7 @@
 <html lang="ja">
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-		<title>テーブル定義書&#32;マイみーる　食数管理システム&#32;Phase1</title>
+		<title>テーブル定義書&#32;マイみーる　食事予約システム&#32;Phase1</title>
 		<link rel="stylesheet" href="a5m2.css">
 	</head>
 	<body>
@@ -29,15 +29,15 @@
 				<col width="305">
 			</colgroup>
 			<th>システム名</th>
-			<td>マイみーる　食数管理システム</td>
+			<td>マイみーる　食事予約システム</td>
 			<th>作成者</th>
-			<td>Le&#32;Thanh&#32;Nghi</td>
+			<td>bnghi</td>
 		</tr>
 		<tr>
 			<th>サブシステム名</th>
 			<td>Phase1</td>
 			<th>作成日</th>
-			<td>2024/12/14</td>
+			<td>2025/01/30</td>
 		</tr>
 		<tr>
 			<th>RDBMS</th>
@@ -188,6 +188,15 @@
 		</tr>
 		<tr>
 			<td class="number-format">14</td>
+			<td>利用状態/Trạng&#32;thái&#32;sử&#32;dụng</td>
+			<td>usable_status</td>
+			<td>tinyint</td>
+			<td>Yes</td>
+			<td>0</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="number-format">15</td>
 			<td></td>
 			<td>created_at</td>
 			<td>timestamp</td>
@@ -196,7 +205,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<td class="number-format">15</td>
+			<td class="number-format">16</td>
 			<td></td>
 			<td>updated_at</td>
 			<td>timestamp</td>
@@ -288,6 +297,15 @@
 			<th>ON DELETE</th>
 			<th>ON UPDATE</th>
 		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>debtors_user_id_foreign</td>
+			<td>id</td>
+			<td><a href="users.html">users</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
+		</tr>
 	</table>
 
 <br>
@@ -310,6 +328,15 @@
 			<th>参照元カラムリスト</th>
 			<th>ON DELETE</th>
 			<th>ON UPDATE</th>
+		</tr>
+		<tr>
+			<td class="number-format">1</td>
+			<td>debtors_user_id_foreign</td>
+			<td>id</td>
+			<td><a href="users.html">users</td>
+			<td>id</td>
+			<td>CASCADE</td>
+			<td>NO&#32;ACTION</td>
 		</tr>
 	</table>
 
